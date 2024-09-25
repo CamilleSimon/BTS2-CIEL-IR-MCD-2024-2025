@@ -444,6 +444,17 @@
             <mxRectangle width="150" height="20" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="1-kbslC2DmvLdbqfmZI--103" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;entryX=0.354;entryY=0.008;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="C-vyLk0tnHw3VtMMgP7b-27" target="1-kbslC2DmvLdbqfmZI--91">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1218" y="-175" as="sourcePoint" />
+            <mxPoint x="1160" y="215" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1-kbslC2DmvLdbqfmZI--104" value="possède" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1-kbslC2DmvLdbqfmZI--103">
+          <mxGeometry x="0.2442" y="1" relative="1" as="geometry">
+            <mxPoint x="-65" y="-55" as="offset" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
