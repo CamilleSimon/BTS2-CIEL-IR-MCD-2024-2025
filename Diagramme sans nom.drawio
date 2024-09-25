@@ -397,7 +397,7 @@
             <mxPoint x="202" y="240" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1-kbslC2DmvLdbqfmZI--90" value="possède" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1-kbslC2DmvLdbqfmZI--89">
+        <mxCell id="1-kbslC2DmvLdbqfmZI--90" value="créé" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1-kbslC2DmvLdbqfmZI--89">
           <mxGeometry x="0.2442" y="1" relative="1" as="geometry">
             <mxPoint x="42" y="-69" as="offset" />
           </mxGeometry>
