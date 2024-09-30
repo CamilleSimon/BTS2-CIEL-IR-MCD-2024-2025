@@ -20,4 +20,9 @@ docker run -p 80:80 -p 443:443 -p 443:443/udp \
 
 Dans votre dossier `BTS2-CIEL-IR-MCD-2024-2025` se trouve un ensemble de différent élément de code. Récupérer les et placez les aux bons endroits dans votre dossier `League_of_Branly`.
 
+## 3. Création des entités
 
+```bash
+php artisan make:model Champion -m
+php artisan make:model Gender -m
+```
