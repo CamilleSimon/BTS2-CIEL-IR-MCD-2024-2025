@@ -216,7 +216,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="W7fFtdqwTI0kEJG4qfdu-3" value="capacité" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;rounded=1;labelBackgroundColor=none;fillColor=#F694C1;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
-          <mxGeometry x="850" y="130" width="260" height="190" as="geometry" />
+          <mxGeometry x="850" y="130" width="260" height="160" as="geometry" />
         </mxCell>
         <mxCell id="W7fFtdqwTI0kEJG4qfdu-4" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="W7fFtdqwTI0kEJG4qfdu-3" vertex="1">
           <mxGeometry y="30" width="260" height="30" as="geometry" />
@@ -226,7 +226,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="W7fFtdqwTI0kEJG4qfdu-6" value="Id_capacité " style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="W7fFtdqwTI0kEJG4qfdu-4" vertex="1">
+        <mxCell id="W7fFtdqwTI0kEJG4qfdu-6" value="Champion_id" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="W7fFtdqwTI0kEJG4qfdu-4" vertex="1">
           <mxGeometry x="30" width="100" height="30" as="geometry">
             <mxRectangle width="100" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -286,24 +286,6 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="sXwHBOZc4SzwsJdpyu8K-29" value="VARCHAR(255)" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="W7fFtdqwTI0kEJG4qfdu-74" vertex="1">
-          <mxGeometry x="130" width="130" height="30" as="geometry">
-            <mxRectangle width="130" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="W7fFtdqwTI0kEJG4qfdu-44" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="W7fFtdqwTI0kEJG4qfdu-3" vertex="1">
-          <mxGeometry y="150" width="260" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="W7fFtdqwTI0kEJG4qfdu-45" value="FK" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="W7fFtdqwTI0kEJG4qfdu-44" vertex="1">
-          <mxGeometry width="30" height="30" as="geometry">
-            <mxRectangle width="30" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="W7fFtdqwTI0kEJG4qfdu-46" value="Champion_id" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="W7fFtdqwTI0kEJG4qfdu-44" vertex="1">
-          <mxGeometry x="30" width="100" height="30" as="geometry">
-            <mxRectangle width="100" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="sXwHBOZc4SzwsJdpyu8K-30" value="INT NOT NUL" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" parent="W7fFtdqwTI0kEJG4qfdu-44" vertex="1">
           <mxGeometry x="130" width="130" height="30" as="geometry">
             <mxRectangle width="130" height="30" as="alternateBounds" />
           </mxGeometry>
