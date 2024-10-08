@@ -1,12 +1,16 @@
 ## 1
-Réponse 1 : Nouscherchons a modéliser des champions
+Réponse 1 : Nous cherchons a modéliser des champions
+
 Réponse 2 : Les caractéristiques uniques sont le nom, la réplique et les compétences
 ## 2
 Réponse 3 : Nous avons besoin de son nom, son genre, son rôle, son espèce, sa ressource, son type de portée, sa région, son année de sortie, sa réplique, ses compétences et ses skins
+
 Réponse 4 : Par une clé primaire étant un int
+
 Réponse 5 : Pour le nom, le genre, le rôle, l'espèce, la ressource, la portée, la région, l'année et la réplique, il faut des VARCHAR et pour les compétences et les skins il faut des BASE64
 ## 3
 Réponse 6 : Les autres informations importantes sont le rôle du champion, la ressource utilisée, la portée du champion, ses skins et ses répliques
+
 Réponse 7 : Le rôle, le genre, l'espèce, la ressource, le type de portée, la région, l'année de sortie pourraient être des entitées séparées car plusieurs champions peuvent avoir les mêmes
 ## 4
 Réponse 8 : Leur nom
