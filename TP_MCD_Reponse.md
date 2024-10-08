@@ -13,7 +13,7 @@ Réponse 8 : Leur nom
 ## 5
 Réponse 9 : Les connexions logiques sont possession et appartenance
 ## 6
-Réponse 10 : Un champion peut avoir plusieurs rôles, un rôle peut être donné à plusieurs champions
+Réponse 10 : Un champion peut avoir plusieurs rôles, un rôle peut être donné à plusieurs champions\n
              Un champion peut avoir un genre, un genre peut être donné à plusieurs champions
              Un champion peut avoir plusieurs espèces, une espèce peut être donnée à plusieurs champions
              Un champion peut avoir plusieurs types de portée, un type de portée peut être donné à plusieurs champions
