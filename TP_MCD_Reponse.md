@@ -13,23 +13,40 @@ Réponse 8 : Leur nom
 ## 5
 Réponse 9 : Les connexions logiques sont possession et appartenance
 ## 6
-Réponse 10 : Un champion peut avoir plusieurs rôles, un rôle peut être donné à plusieurs champions\n
+Réponse 10 : Un champion peut avoir plusieurs rôles, un rôle peut être donné à plusieurs champions
+
              Un champion peut avoir un genre, un genre peut être donné à plusieurs champions
+             
              Un champion peut avoir plusieurs espèces, une espèce peut être donnée à plusieurs champions
+             
              Un champion peut avoir plusieurs types de portée, un type de portée peut être donné à plusieurs champions
+             
              Un champion peut avoir plusieurs régions, une région peut être donnée à plusieurs champions
+             
              Un champion peut avoir une seule année de sortie, une année de sortie peut être donnée à plusieurs champions
+             
              Un champion peut avoir plusieurs répliques, une réplique est donnée à un seul champion
+             
              Un champion peut avoir plusieurs compétences, une compétence est donnée à un seul champion
+             
              Un champion peut avoir plusieurs skins, un skin est donné à un seul champion
              
 Réponse 11 : Champion-Rôle : one-to-many ; one-to-many
+
              Champion-Genre : one-to-one ; one-to-many
+             
              Champion-Espèce : one-to-many ; one-to-many
+             
              Champion-Ressource : one-to-one ; one-to-many
+             
              Champion-Type de portée : one-to-many ; one-to-many
+             
              Champion-Région : one-to-many ; one-to-many
+             
              Champion-Année de sortie : one-to-one ; one-to-many
+             
              Champion-Réplique : one-to-many ; one-to-one
+             
              Champion-Compétence : one-to-many ; one-to-one
+             
              Champion-Skin : one-to-many ; one-to-one
