@@ -13,8 +13,7 @@ Réponse 8 : Leur nom
 ## 5
 Réponse 9 : Les connexions logiques sont possession et appartenance
 ## 6
-Réponse 10 : 
-Un champion peut avoir plusieurs rôles, un rôle peut être donné à plusieurs champions
+Réponse 10 : Un champion peut avoir plusieurs rôles, un rôle peut être donné à plusieurs champions
 
              Un champion peut avoir un genre, un genre peut être donné à plusieurs champions
              
@@ -32,8 +31,7 @@ Un champion peut avoir plusieurs rôles, un rôle peut être donné à plusieurs
              
              Un champion peut avoir plusieurs skins, un skin est donné à un seul champion
              
-Réponse 11 : 
-Champion-Rôle : one-to-many ; one-to-many
+Réponse 11 : Champion-Rôle : one-to-many ; one-to-many
 
              Champion-Genre : one-to-one ; one-to-many
              
