@@ -49,73 +49,73 @@ Elles sont séparées car ce ne sont pas des informations uniques à un seul cha
 Pour chaque entité secondaire il faut son nom et pour certaines une image.
 
 ### 5.
-Champion a un Genre.
+Champion a un Genre. 
 Genre a un ou plusieurs Champion.
 
-Champion a un ou plusieurs Rôle
-Rôle a un ou plusieurs Champion
+Champion a un ou plusieurs Rôle. 
+Rôle a un ou plusieurs Champion.
 
-Champion a une ou plusieurs Espèce
-Espèce a un ou plusieurs Champion
+Champion a une ou plusieurs Espèce. 
+Espèce a un ou plusieurs Champion. 
 
-Champion a une Ressource
-Ressource a un ou plusieurs Champion
+Champion a une Ressource. 
+Ressource a un ou plusieurs Champion.
 
-Champion a un ou plusieurs Type de portée
-Type de portée a un ou plusieurs Champion
+Champion a un ou plusieurs Type de portée. 
+Type de portée a un ou plusieurs Champion. 
 
-Champion a un ou plusieurs Région
-Région a un ou plusieurs Champion
+Champion a un ou plusieurs Région. 
+Région a un ou plusieurs Champion. 
 
-Champion a une Année de sortie
-Année de sortie a un ou plusieurs Champion
+Champion a une Année de sortie.
+Année de sortie a un ou plusieurs Champion.
 
-Champion a un ou plusieurs Citation
-Citaion a un Champion
+Champion a un ou plusieurs Citation.
+Citaion a un Champion.
 
-Champion a plusieurs Compétence
-Compétence a un Champion
+Champion a plusieurs Compétence.
+Compétence a un Champion.
 
-Champion a plusieurs Emoji
-Emoji a un ou plusieurs Champion
+Champion a plusieurs Emoji.
+Emoji a un ou plusieurs Champion.
 
-Champion a un ou plusieurs Skin
-Skin a un Champion
+Champion a un ou plusieurs Skin.
+Skin a un Champion.
 
 Ces connexions sont exprimées avec des cardinalités.
 
 ### 6.
-Champion (1,1) Genre.
-Genre (1,n) Champion.
+Champion (1,1) Genre 
+Genre (1,n) Champion 
 
-Champion (1,n) Rôle
-Rôle (1,n) Champion
+Champion (1,n) Rôle 
+Rôle (1,n) Champion 
 
-Champion (1,n) Espèce
-Espèce (1,n) Champion
+Champion (1,n) Espèce 
+Espèce (1,n) Champion 
 
-Champion (1,1) Ressource
-Ressource (1,n) Champion
+Champion (1,1) Ressource 
+Ressource (1,n) Champion 
 
-Champion (1,n) Type de portée
-Type de portée (1,n) Champion
+Champion (1,n) Type de portée 
+Type de portée (1,n) Champion 
 
-Champion (1,n) Région
-Région (1,n) Champion
+Champion (1,n) Région 
+Région (1,n) Champion 
 
-Champion (1,1) Année de sortie
-Année de sortie (1,n) Champion
+Champion (1,1) Année de sortie 
+Année de sortie (1,n) Champion 
 
-Champion (1,n) Citation
-Citaion (1,1) Champion
+Champion (1,n) Citation 
+Citaion (1,1) Champion 
 
-Champion (n,n) Compétence
-Compétence (1,1) Champion
+Champion (n,n) Compétence 
+Compétence (1,1) Champion 
 
-Champion (n,n) Emoji
-Emoji (1,n) Champion
+Champion (n,n) Emoji 
+Emoji (1,n) Champion 
 
-Champion (1,n) Skin
-Skin (1,1) Champion
+Champion (1,n) Skin 
+Skin (1,1) Champion 
 
 Ces réponse se traduisent dans le modèle via des relation(traits).
