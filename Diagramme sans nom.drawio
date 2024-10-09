@@ -92,7 +92,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-40X0oGDR-Q6KqEdwp65-15" value="Nom varchar(50)," style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="-40X0oGDR-Q6KqEdwp65-13">
+        <mxCell id="-40X0oGDR-Q6KqEdwp65-15" value="Genre varchar(50)," style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="-40X0oGDR-Q6KqEdwp65-13">
           <mxGeometry x="30" width="220" height="30" as="geometry">
             <mxRectangle width="220" height="30" as="alternateBounds" />
           </mxGeometry>
