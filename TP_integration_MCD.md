@@ -9,9 +9,11 @@ Intégrer les entités et les relations du Modèle Conceptuel de Données (MCD) 
 
 ### 1. Mise en place de Laravel
 
-Pour construire le site web, vous n'allez pas créer toute l'architecture vous même. On va utiliser un framework PHP du nom de Laravel.
+Pour construire le site web, vous n'allez pas créer toute l'architecture vous même. On va utiliser un framework PHP du nom de Laravel dans un conteneur Docker.
 
-Ouvrez un terminal **bash en administrateur** avec le compte **.\tpdocker** et entrer la commande suivante en remplaçant `csimon.SNIRW` par votre dossier.
+Lancer **Docker** en administrateur avec le compte **.\tpdocker**.
+
+Ouvrez un terminal **bash en administrateur** avec le compte **.\tpdocker**. Copiez-collez la commande ci-dessous dans un bloc-note, remplacer `csimon.SNIRW` par votre nom de dossier puis mettez cette commande dnas le bash.
 
 ```bash
 docker run -p 80:80 -p 443:443 -p 443:443/udp \
@@ -50,6 +52,51 @@ Configurez HEIDI avec les paramétres ci-dessous :
 
 ## B. Intégration du modèle Entités-Relations
 
+### 0. Le modèle Entités-Relations
+
+Afin de tous partir sur la même base, je vous propose d'implémenter ce MCD :
+
+```mermaid
+erDiagram
+    CHAMPION {
+        int champion_id PK
+        varchar(50) name
+        int releaseYear
+    }
+    GENDER {
+        int gender_id PK
+        varchar(20) name
+    }
+    POSITION {
+        int position_id PK
+        varchar(20) name
+    }
+    SPECIE {
+        int specie_id PK
+        varchar(50) name
+    }
+    RESOURCE {
+        int resource_id PK
+        varchar(30) name
+    }
+    RANGE {
+        int range_id PK
+        varchar(20) type
+    }
+    REGION {
+        int region_id PK
+        varchar(50) name
+        text lore
+    }
+
+    CHAMPION ||--o{ GENDER : "has"
+    CHAMPION }o--o{ POSITION : "can_play_as"
+    CHAMPION }o--o{ SPECIE : "belongs_to"
+    CHAMPION ||--o{ RESOURCE : "uses"
+    CHAMPION ||--o{ RANGE : "has"
+    CHAMPION }o--o{ REGION : "comes_from"
+```
+
 ### 1. Création des migrations
 
 Le fonctionnement des migrations est expliqué [ici](./Migration.md)
@@ -86,9 +133,6 @@ public function up()
     Schema::create('champions', function (Blueprint $table) {
         $table->id();
         $table->string('name', 50);
-        $table->string('title', 100);
-        $table->text('lore');
-        $table->integer('difficulty');
         $table->integer('release_year');
         $table->foreignId('gender_id')->constrained();
         $table->foreignId('specie_id')->constrained();
@@ -100,6 +144,7 @@ public function up()
 ```
 
 **Tâche :** Créez des structures similaires pour les autres tables, en adaptant les champs selon les besoins de chaque entité.
+
 **Question :** Quelles différences notez-vous entre la structure de la table champions et celle des autres tables ?
 
 ### 3. Création des modèles
@@ -163,6 +208,7 @@ class Champion extends Model
 ```
 
 **Tâche :** Définissez les relations pour les autres modèles de manière similaire.
+
 **Question :** Pourquoi utilisons-nous `belongsToMany` pour certaines relations et `belongsTo` pour d'autres ?
 
 ### 5. Exécution des migrations
