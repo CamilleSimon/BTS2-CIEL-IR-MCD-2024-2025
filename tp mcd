@@ -1,0 +1,33 @@
+tp mcd foot
+
+question 1
+On cerche a modéliser table joueur avec comme caractéristique nom et club.
+
+question 2
+1)le nom, la taille, date de naissance,poste, championnat, nationalité, club, statistique
+2)Par une clé primaire entier
+3)Varchar
+
+question 3
+1) club championnat statistique poste taille
+2) taille, championnat, date de naissance, club, nationalité,poste
+
+question 4
+1)il faut son nom,championnat et sa nationalité
+
+question 5
+1)joueur club
+joueur nationalité
+joueur poste
+joueur championnat
+joueur date de naissance
+joueur taille
+joueur statistique
+
+2) chaque joueur possède un club une nationalité un poste un championnat une date de naissance et une taille
+
+question 6
+1)un joueur appartient a un club
+2) plusieurs joueurs peuvent appartenir au même club
+3)1..1:1..n
+
