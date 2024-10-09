@@ -48,7 +48,7 @@ Afin de pouvoir naviguer facilement dans votre BDD, installez le logiciel [Heidi
 
 Configurez HEIDI avec les paramétres ci-dessous :
 
-![image](https://github.com/user-attachments/assets/795e78bc-bc8d-4c06-97f5-bf15f2cceef0)
+![image](https://github.com/user-attachments/assets/8ed92a0b-d5f3-4b0c-911c-a7c14226035b)
 
 ## B. Intégration du modèle Entités-Relations
 
@@ -60,41 +60,45 @@ Afin de tous partir sur la même base, je vous propose d'implémenter ce MCD :
 erDiagram
     CHAMPION {
         int champion_id PK
-        varchar(50) name
-        int releaseYear
+        varchar(50) champion_name
     }
     GENDER {
-        int gender_id PK
+        int id_gender PK
         varchar(20) name
     }
     POSITION {
         int position_id PK
-        varchar(20) name
+        varchar(20) position_name
     }
     SPECIE {
         int specie_id PK
-        varchar(50) name
+        varchar(50) specie_name
     }
     RESOURCE {
         int resource_id PK
-        varchar(30) name
+        varchar(30) resource_name
     }
     RANGE {
         int range_id PK
-        varchar(20) type
+        varchar(20) range_name
     }
     REGION {
         int region_id PK
-        varchar(50) name
+        varchar(50) region_name
         text lore
     }
+    YEAR {
+        int year_id PK
+        int year_number
+    }
 
-    CHAMPION ||--o{ GENDER : "has"
+    CHAMPION ||--o| GENDER : "has"
     CHAMPION }o--o{ POSITION : "can_play_as"
     CHAMPION }o--o{ SPECIE : "belongs_to"
-    CHAMPION ||--o{ RESOURCE : "uses"
-    CHAMPION ||--o{ RANGE : "has"
+    CHAMPION ||--o| RESOURCE : "uses"
+    CHAMPION }o--o{ RANGE : "has"
     CHAMPION }o--o{ REGION : "comes_from"
+    CHAMPION ||--o| YEAR : "released_in"
 ```
 
 ### 1. Création des migrations
@@ -113,11 +117,14 @@ php artisan make:migration create_species_table
 php artisan make:migration create_resources_table
 php artisan make:migration create_ranges_table
 php artisan make:migration create_regions_table
+php artisan make:migration create_year_table
 php artisan make:migration create_champion_position_table
+php artisan make:migration create_champion_specie_table
+php artisan make:migration create_champion_range_table
 php artisan make:migration create_champion_region_table
 ```
 
-**Question :** Pourquoi créons-nous des tables séparées pour `champion_position` et `champion_region` ?
+**Question :** Pourquoi créons-nous des tables séparées pour `champion_position`, `champion_region`, `champion_specie` et `champion_range` ?
 
 ### 2. Définition des structures des tables
 
@@ -133,11 +140,8 @@ public function up()
     Schema::create('champions', function (Blueprint $table) {
         $table->id();
         $table->string('name', 50);
-        $table->integer('release_year');
         $table->foreignId('gender_id')->constrained();
-        $table->foreignId('specie_id')->constrained();
         $table->foreignId('resource_id')->constrained();
-        $table->foreignId('range_id')->constrained();
         $table->timestamps();
     });
 }
