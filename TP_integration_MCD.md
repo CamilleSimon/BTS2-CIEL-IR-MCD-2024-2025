@@ -132,6 +132,8 @@ Naviguez vers le dossier `database/migrations`.
 
 **Tâche :** Pour chaque fichier de migration créé, définissez la structure de la table correspondante en vous appuyant sur votre MCD étendu.
 
+Les relations `one-to-many` vont être matérialisées par des clés étrangères dans la table `champion`.
+
 Exemple pour la table `champions` :
 
 ```php
@@ -140,11 +142,23 @@ public function up()
     Schema::create('champions', function (Blueprint $table) {
         $table->id();
         $table->string('name', 50);
-        $table->integer('release_year');
         $table->foreignId('gender_id')->constrained();
-        $table->foreignId('specie_id')->constrained();
         $table->foreignId('resource_id')->constrained();
-        $table->foreignId('range_id')->constrained();
+        $table->timestamps();
+    });
+}
+```
+
+Pour chaque relation `many-to-many`, on crée une table **pivot**. Par exemple :
+
+
+```php
+public function up()
+{
+    Schema::create('champion_position', function (Blueprint $table) {
+        $table->id('champion_position_id');
+        $table->foreignId('champion_id')->constrained();
+        $table->foreignId('position_id')->constrained();
         $table->timestamps();
     });
 }
@@ -180,7 +194,7 @@ class Champion extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'title', 'lore', 'difficulty', 'release_year'];
+    protected $fillable = ['name'];
 
     public function gender()
     {
@@ -192,9 +206,9 @@ class Champion extends Model
         return $this->belongsToMany(Position::class);
     }
 
-    public function specie()
+    public function species()
     {
-        return $this->belongsTo(Specie::class);
+        return $this->belongsToMany(Specie::class);
     }
 
     public function resource()
@@ -202,9 +216,9 @@ class Champion extends Model
         return $this->belongsTo(Resource::class);
     }
 
-    public function range()
+    public function ranges()
     {
-        return $this->belongsTo(Range::class);
+        return $this->belongsToMany(Range::class);
     }
 
     public function regions()
