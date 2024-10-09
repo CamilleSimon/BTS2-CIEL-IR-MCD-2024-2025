@@ -28,12 +28,12 @@ L'ID pour les différencier et leurs noms, date
  6 - a) Pour chaque relation que vous avez identifiée, réfléchissez :
  
 Un champion peut-il avoir plusieurs instances de cette caractéristique ?
-Il peut avoir plusieurs : Region, Compétences, Skin, Espèce.
+Il peut avoir plusieurs : Regions, Compétences, Skins, Espèces, Rôles.
 
-Cette caractéristique peut-elle être partagée par plusieurs champions ?
-Ces caractéristiques peuvent être commune aux champions : Date, Ressource, Region, Rôle, Espèce, Genre
+b) Cette caractéristique peut-elle être partagée par plusieurs champions ?
+Ces caractéristiques peuvent être commune aux champions : Date, Ressource, Region, Rôle, Espèce, Genre.
 
-Comment ces réponses se traduisent-elles en termes de cardinalités dans votre modèle ?
+c) Comment ces réponses se traduisent-elles en termes de cardinalités dans votre modèle ?
 Genre :            champ->Genre   1,1      Genre->champ : 1,n
 Skin :             champ->Skin : 1,n       Skin->champ : 1,1
 Compétences :      champ->comp : 1,n       comp->champ : 1,1 
@@ -43,7 +43,10 @@ Region:            champ->Region:  1,n     Region->champ :  1,n
 Ressource :        champ->Ressource 1,1    Ressource->champ  : 1,n
 Année :            champ->Année : 1,1      Année->champ :   1,n
 
+7 - a) Quels symboles allez-vous utiliser pour représenter les différents éléments de votre MCD ?
+Des flèches avec plus un embout différents pour : 1,n  et 1,1
 
-
+b) Comment allez-vous organiser visuellement votre diagramme pour qu'il soit clair et facile à comprendre ?
+Toutes les entités secondaires seront reliées aux champions et l'entiés champions séparées des autres.
 
 
