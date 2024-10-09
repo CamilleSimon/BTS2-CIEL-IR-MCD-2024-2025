@@ -8,7 +8,7 @@ Nous avons besoin de tout ses attributs :
 Année de sortie / Ressource / Region / Espece / Compétences / Skin / Genre / Champion
 
 2 - b) Comment pouvez-vous représenter l'identifiant unique d'un champion dans le modèle ?
-Avec une primary key de leurs nom car leurs nom sont uniques pour chaque champions ou avec un Champion_id
+Avec une primary key d'un ID car ils sont uniques pour chaque champions avec un "Champion_id"
 
 2- c) Quels types de données seraient appropriés pour chaque attribut que vous avez identifié ?
 Tous les attributs avec des varchar() sauf pour les dates de sortie en type : Date et le prix des Skin en : Int
