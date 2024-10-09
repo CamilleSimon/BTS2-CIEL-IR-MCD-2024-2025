@@ -33,5 +33,4 @@ TP MCD
    -année de sortie vers champion : (1,n)
    -champion vers année de sortie : (1,1)
 
-   7) 
    
