@@ -46,7 +46,7 @@ Comment ces réponses se traduisent-elles en termes de cardinalités dans votre 
 
 7. Création du diagramme
 Utilisez draw.io pour créer votre diagramme. Quels symboles allez-vous utiliser pour représenter les différents éléments de votre MCD ?
-7_a)
+7_a) 1,1 et 1,n
 
 Comment allez-vous organiser visuellement votre diagramme pour qu'il soit clair et facile à comprendre ?
 7_b)L'entité Champion au centre en bas et toutes les entités caractéristiques en haut autour de l'entité champion.
