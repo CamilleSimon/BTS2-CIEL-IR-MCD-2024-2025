@@ -24,10 +24,16 @@ leur ID, leur type
 Quelles sont les connexions logiques entre l'entité principale (champion) et les entités secondaires ?
 Comment exprimeriez-vous ces connexions en termes de relations dans un MCD ?
 Comment ces réponses se traduisent-elles en termes de cardinalités dans votre modèle ?
+
 .un champion il a un genre (1,1), un genre appartient a plusieurs champion (1,n)
+
 .un champion a plusieurs éspeces(1,n), un espéce appartient a plusieurs champion (1, n)
+
 .un champion a plusieurs roles(1,n), un role appartient a plusiers champions (1, n)
+
 .un champion a une ressourse(1,1), une ressourse appartient a plusieurs champions (1,n)
+
 .un champion a plusieurs types de portées(1,n), un type de portée appartient a plusiers champions(1,n)
+
 .un champion a plusiers régions(1,n), une région appartient à plusiers champions(1,n) 
 
