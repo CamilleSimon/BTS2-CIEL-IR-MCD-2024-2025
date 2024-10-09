@@ -59,37 +59,37 @@ Afin de tous partir sur la même base, je vous propose d'implémenter ce MCD :
 ```mermaid
 erDiagram
     CHAMPION {
-        int id_champion PK
-        varchar(50) name
+        int champion_id PK
+        varchar(50) champion_name
     }
     GENDER {
         int id_gender PK
         varchar(20) name
     }
     POSITION {
-        int id_position PK
-        varchar(20) name
+        int position_id PK
+        varchar(20) position_name
     }
     SPECIE {
-        int id_specie PK
-        varchar(50) name
+        int specie_id PK
+        varchar(50) specie_name
     }
     RESOURCE {
-        int id_resource PK
-        varchar(30) name
+        int resource_id PK
+        varchar(30) resource_name
     }
     RANGE {
-        int id_range PK
-        varchar(20) type
+        int range_id PK
+        varchar(20) range_name
     }
     REGION {
-        int id_region PK
-        varchar(50) name
+        int region_id PK
+        varchar(50) region_name
         text lore
     }
     YEAR {
-        int id_year PK
-        int year
+        int year_id PK
+        int year_number
     }
 
     CHAMPION ||--o| GENDER : "has"
@@ -132,6 +132,8 @@ Naviguez vers le dossier `database/migrations`.
 
 **Tâche :** Pour chaque fichier de migration créé, définissez la structure de la table correspondante en vous appuyant sur votre MCD étendu.
 
+Les relations `one-to-many` vont être matérialisées par des clés étrangères dans la table `champion`.
+
 Exemple pour la table `champions` :
 
 ```php
@@ -140,11 +142,23 @@ public function up()
     Schema::create('champions', function (Blueprint $table) {
         $table->id();
         $table->string('name', 50);
-        $table->integer('release_year');
         $table->foreignId('gender_id')->constrained();
-        $table->foreignId('specie_id')->constrained();
         $table->foreignId('resource_id')->constrained();
-        $table->foreignId('range_id')->constrained();
+        $table->timestamps();
+    });
+}
+```
+
+Pour chaque relation `many-to-many`, on crée une table **pivot**. Par exemple :
+
+
+```php
+public function up()
+{
+    Schema::create('champion_position', function (Blueprint $table) {
+        $table->id('champion_position_id');
+        $table->foreignId('champion_id')->constrained();
+        $table->foreignId('position_id')->constrained();
         $table->timestamps();
     });
 }
