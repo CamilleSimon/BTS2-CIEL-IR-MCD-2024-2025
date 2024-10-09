@@ -48,7 +48,7 @@ Afin de pouvoir naviguer facilement dans votre BDD, installez le logiciel [Heidi
 
 Configurez HEIDI avec les paramétres ci-dessous :
 
-![image](https://github.com/user-attachments/assets/795e78bc-bc8d-4c06-97f5-bf15f2cceef0)
+![image](https://github.com/user-attachments/assets/8ed92a0b-d5f3-4b0c-911c-a7c14226035b)
 
 ## B. Intégration du modèle Entités-Relations
 
@@ -59,42 +59,49 @@ Afin de tous partir sur la même base, je vous propose d'implémenter ce MCD :
 ```mermaid
 erDiagram
     CHAMPION {
-        int champion_id PK
+        int id_champion PK
         varchar(50) name
-        int releaseYear
+        varchar(100) title
+        text lore
+        int difficulty
     }
     GENDER {
-        int gender_id PK
+        int id_gender PK
         varchar(20) name
     }
     POSITION {
-        int position_id PK
+        int id_position PK
         varchar(20) name
     }
     SPECIE {
-        int specie_id PK
+        int id_specie PK
         varchar(50) name
     }
     RESOURCE {
-        int resource_id PK
+        int id_resource PK
         varchar(30) name
     }
     RANGE {
-        int range_id PK
+        int id_range PK
         varchar(20) type
     }
     REGION {
-        int region_id PK
+        int id_region PK
         varchar(50) name
         text lore
     }
+    YEAR {
+        int id_year PK
+        int year
+    }
 
-    CHAMPION ||--o{ GENDER : "has"
+    CHAMPION ||--o| GENDER : "has"
     CHAMPION }o--o{ POSITION : "can_play_as"
     CHAMPION }o--o{ SPECIE : "belongs_to"
-    CHAMPION ||--o{ RESOURCE : "uses"
-    CHAMPION ||--o{ RANGE : "has"
+    CHAMPION ||--o| RESOURCE : "uses"
+    CHAMPION }o--o{ RANGE : "has"
     CHAMPION }o--o{ REGION : "comes_from"
+    CHAMPION ||--o| YEAR : "released_in"
 ```
 
 ### 1. Création des migrations
