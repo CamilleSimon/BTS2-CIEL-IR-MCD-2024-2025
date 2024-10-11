@@ -8,8 +8,14 @@ Les informations uniques à un champion sont son ID, son nom, ses compétences
 4)Les informations qui sont nécessaires pour les décrire sont leurs ID, leurs noms, la date, l'espece
 
 5)Un champion possede plusieurs competence  
-Une competence appartient a un champion
+Une competence appartient a un champion  
 Plusieurs champions peuvent avoir la meme especes  
-Une espece peut appartenir a plusieurs champions
+Une espece peut appartenir a plusieurs champions  
 Plusieurs champions peuvent avoir la meme region   
 Une region peut appartenir a plusieurs champions  
+Plusieurs champions peuvent avoir la meme année de sortie   
+Une année de sortie peut appartenir a plusieurs champions  
+Plusieurs champions peuvent avoir le meme role   
+Un role peut appartenir a plusieurs champions  
+Plusieurs champions peuvent avoir la meme ressource   
+Une ressource peut appartenir a plusieurs champions  
