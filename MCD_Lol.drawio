@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.17">
   <diagram name="Page-1" id="t2noIY3E4Agqq7MLwgNk">
-    <mxGraphModel dx="2074" dy="678" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2336" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -667,7 +667,7 @@
         <mxCell id="ijgVp3yeVyCU8Ju5ILkH-796" value="possède" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;strokeColor=#60E696;fontColor=default;startArrow=ERmandOne;startFill=0;endArrow=ERoneToMany;endFill=0;sketch=1;curveFitting=1;jiggle=2;" edge="1" parent="1" source="ijgVp3yeVyCU8Ju5ILkH-542" target="ijgVp3yeVyCU8Ju5ILkH-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ijgVp3yeVyCU8Ju5ILkH-798" value="&lt;b&gt;possède&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#60E696;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontColor=default;fillColor=#F694C1;startArrow=ERmandOne;startFill=0;endArrow=ERoneToMany;endFill=0;sketch=1;curveFitting=1;jiggle=2;labelBackgroundColor=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ijgVp3yeVyCU8Ju5ILkH-746" target="RuVK2P7DuSqCsmOVl9EX-35">
+        <mxCell id="ijgVp3yeVyCU8Ju5ILkH-798" value="&lt;b&gt;posséde&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;hachureGap=4;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#60E696;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontColor=default;fillColor=#F694C1;startArrow=ERmandOne;startFill=0;endArrow=ERoneToMany;endFill=0;sketch=1;curveFitting=1;jiggle=2;labelBackgroundColor=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ijgVp3yeVyCU8Ju5ILkH-746" target="RuVK2P7DuSqCsmOVl9EX-35">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-109.99999999999977" y="135" as="targetPoint" />
           </mxGeometry>
@@ -1009,7 +1009,7 @@
             <mxPoint x="-150" y="275" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ijgVp3yeVyCU8Ju5ILkH-889" value="possède" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;rounded=1;labelBackgroundColor=none;fillColor=#F694C1;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+        <mxCell id="ijgVp3yeVyCU8Ju5ILkH-889" value="apartien" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;rounded=1;labelBackgroundColor=none;fillColor=#F694C1;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
           <mxGeometry x="-270" y="355" width="260" height="130" as="geometry" />
         </mxCell>
         <mxCell id="ijgVp3yeVyCU8Ju5ILkH-890" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="ijgVp3yeVyCU8Ju5ILkH-889">
@@ -1072,7 +1072,7 @@
             <mxPoint x="-340.5" y="505" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ijgVp3yeVyCU8Ju5ILkH-905" value="possède" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;rounded=1;labelBackgroundColor=none;fillColor=#F694C1;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+        <mxCell id="ijgVp3yeVyCU8Ju5ILkH-905" value="aparatien" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;rounded=1;labelBackgroundColor=none;fillColor=#F694C1;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
           <mxGeometry x="827" y="550" width="260" height="130" as="geometry" />
         </mxCell>
         <mxCell id="ijgVp3yeVyCU8Ju5ILkH-906" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;rounded=1;labelBackgroundColor=none;strokeColor=#AF45ED;fontColor=#095C86;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="ijgVp3yeVyCU8Ju5ILkH-905">
