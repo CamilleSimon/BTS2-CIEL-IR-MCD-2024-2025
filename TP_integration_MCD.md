@@ -125,6 +125,7 @@ php artisan make:migration create_champion_region_table
 ```
 
 **Question :** Pourquoi créons-nous des tables séparées pour `champion_position`, `champion_region`, `champion_specie` et `champion_range` ?
+Car par exemple un champion peut avoir plusieurs roles donc on doit utiliser une table de pivot.
 
 ### 2. Définition des structures des tables
 
@@ -167,6 +168,7 @@ public function up()
 **Tâche :** Créez des structures similaires pour les autres tables, en adaptant les champs selon les besoins de chaque entité.
 
 **Question :** Quelles différences notez-vous entre la structure de la table champions et celle des autres tables ?
+La table champions contient plusieurs foreignId.
 
 ### 3. Création des modèles
 
@@ -232,6 +234,7 @@ class Champion extends Model
 **Tâche :** Définissez les relations pour les autres modèles de manière similaire.
 
 **Question :** Pourquoi utilisons-nous `belongsToMany` pour certaines relations et `belongsTo` pour d'autres ?
+On utilise `belongsToMany` quand une ligne d'une table peut appartenir à plusieurs autre table et `belongsTo` si la ligne de la table ne peut appartenir qu'a une autre table.
 
 ### 5. Exécution des migrations
 
@@ -242,7 +245,9 @@ php artisan migrate
 ```
 
 **Question :** Que se passe-t-il si vous exécutez cette commande plusieurs fois ?
+Rien ne se passe.
 
 **Question finale :** Comment pourriez-vous vérifier que votre structure de base de données a été correctement mise en place ?
+A l'aide du logiciel Heidi.
 
 Après avoir répondu à ces questions, vous pouvez passer au [TP SQL](./TP_SQL.md)
