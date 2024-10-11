@@ -23,6 +23,7 @@
    Un champion peut plusieurs instances dans les caractéristiques suivantes: positions, espèces, type de portée et régions.
    Toutes les caractéristiques suaf le nom peuvent être partagé par tous les champions.
    Ces relations sont représentés avec les ces cardinalités:
+   
    ![image](https://github.com/user-attachments/assets/14bcebfc-0be8-48f6-aaed-917d7e21d8c5)
 
 
