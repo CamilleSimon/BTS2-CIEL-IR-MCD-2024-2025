@@ -7,5 +7,5 @@ Les informations uniques à un champion sont son ID, son nom, ses compétences
 
 4)Les informations qui sont nécessaires pour les décrire sont leurs ID, leurs noms, la date, l'espece
 
-5)Un champion possede plusieurs competence
+5)Un champion possede plusieurs competence/
 Une competence appartient a un champion
