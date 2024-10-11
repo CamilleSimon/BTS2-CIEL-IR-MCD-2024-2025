@@ -126,6 +126,8 @@ php artisan make:migration create_champion_region_table
 
 **Question :** Pourquoi créons-nous des tables séparées pour `champion_position`, `champion_region`, `champion_specie` et `champion_range` ?
 
+Parce-que le champion peur vneir de plusieurs régions, avoir plusieurs positions, plusieurs specie et plusieurs range
+
 ### 2. Définition des structures des tables
 
 Naviguez vers le dossier `database/migrations`.
