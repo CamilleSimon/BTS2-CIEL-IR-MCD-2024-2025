@@ -45,5 +45,5 @@ Utilisez draw.io pour créer votre diagramme. Quels symboles allez-vous utiliser
 
 
 Comment allez-vous organiser visuellement votre diagramme pour qu'il soit clair et facile à comprendre ?
-
+  l'emplacement, les noms
 
