@@ -42,4 +42,8 @@ Comment ces réponses se traduisent-elles en termes de cardinalités dans votre 
 8. Création du diagramme
 Utilisez draw.io pour créer votre diagramme. Quels symboles allez-vous utiliser pour représenter les différents éléments de votre MCD ?
   des rectangles.
+
+
 Comment allez-vous organiser visuellement votre diagramme pour qu'il soit clair et facile à comprendre ?
+
+
