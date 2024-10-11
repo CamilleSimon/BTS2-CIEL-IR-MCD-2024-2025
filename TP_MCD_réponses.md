@@ -22,7 +22,7 @@ Quelles sont les connexions logiques entre l'entité principale (champion) et le
    le champion 'possède' les entités secondaires.
 
 Comment exprimeriez-vous ces connexions en termes de relations dans un MCD ?
-  On represente ces relations dans un MCD par une clé étrangère.
+  On represente ces relations avec (1,n)
 
 6. Détermination des cardinalités
 Pour chaque relation que vous avez identifiée, réfléchissez :
@@ -31,6 +31,7 @@ Un champion peut-il avoir plusieurs instances de cette caractéristique ?
 Cette caractéristique peut-elle être partagée par plusieurs champions ?
   Il est possible que plusieurs champions partagent cette caractéristique.
 Comment ces réponses se traduisent-elles en termes de cardinalités dans votre modèle ?
+(0,n)
   
   
   
