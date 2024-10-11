@@ -126,6 +126,8 @@ php artisan make:migration create_champion_region_table
 
 **Question :** Pourquoi créons-nous des tables séparées pour `champion_position`, `champion_region`, `champion_specie` et `champion_range` ?
 
+Parce-que le champion peur vneir de plusieurs régions, avoir plusieurs positions, plusieurs specie et plusieurs range
+
 ### 2. Définition des structures des tables
 
 Naviguez vers le dossier `database/migrations`.
@@ -232,6 +234,7 @@ class Champion extends Model
 **Tâche :** Définissez les relations pour les autres modèles de manière similaire.
 
 **Question :** Pourquoi utilisons-nous `belongsToMany` pour certaines relations et `belongsTo` pour d'autres ?
+Car il y a certaines relations qui utilisent (n,n) et d'autrss (1,n)
 
 ### 5. Exécution des migrations
 
@@ -242,7 +245,11 @@ php artisan migrate
 ```
 
 **Question :** Que se passe-t-il si vous exécutez cette commande plusieurs fois ?
+Il ne se passe rien la deuxieme fois
+
 
 **Question finale :** Comment pourriez-vous vérifier que votre structure de base de données a été correctement mise en place ?
+
+
 
 Après avoir répondu à ces questions, vous pouvez passer au [TP SQL](./TP_SQL.md)
