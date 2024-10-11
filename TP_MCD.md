@@ -1,4 +1,4 @@
-# TP MCD - League of Branly
+# TP MCD - Formula Branly
 
 ## Objectif
 Créer un Modèle Conceptuel de Données (MCD) étendu pour représenter les champions de League of Legends et leurs caractéristiques.
