@@ -28,8 +28,10 @@ Comment exprimeriez-vous ces connexions en termes de relations dans un MCD ?
 Pour chaque relation que vous avez identifiée, réfléchissez :
 Un champion peut-il avoir plusieurs instances de cette caractéristique ?
   Il est possible qu'un champion ai plusieurs instances de cette caractéristique
+
 Cette caractéristique peut-elle être partagée par plusieurs champions ?
   Il est possible que plusieurs champions partagent cette caractéristique.
+  
 Comment ces réponses se traduisent-elles en termes de cardinalités dans votre modèle ?
 (0,n)
   
