@@ -33,6 +33,7 @@ Cette caractéristique peut-elle être partagée par plusieurs champions ?
 Comment ces réponses se traduisent-elles en termes de cardinalités dans votre modèle ?
   
   
+  
 
 
 8. Création du diagramme
