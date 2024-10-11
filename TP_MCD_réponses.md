@@ -19,3 +19,5 @@ Plusieurs champions peuvent avoir le meme role
 Un role peut appartenir a plusieurs champions  
 Plusieurs champions peuvent avoir la meme ressource   
 Une ressource peut appartenir a plusieurs champions  
+
+Nous creons des tables séparées pour champion_position, champion_region, champion_specie et champion_range pour avoir des tables pivots
