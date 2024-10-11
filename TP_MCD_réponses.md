@@ -10,12 +10,12 @@ q4 les noms des entités et les clés primaire
 q5 un champion est composé de toutes les entités secondaires 
 
 q6 un champion a un genre, un ou plusieurs rôles, une espèce, un rôle, un type de portée, une ou plusieurs régions et une année de sortie 
--plusieurs champions peuvent être sortie une même année
--plusieurs champions peuvent utiliser une même ressource
--plusieurs champions peuvent avoir le meme role 
-plusieurs champions peuvent avoir le meme type de portée
-une régions peut contenir plusieurs champions
-plusieurs champions peuvent etre du meme genre
+-plusieurs champions peuvent être sortie une même année (1 to many)
+-plusieurs champions peuvent utiliser une même ressource (1 to many)
+-plusieurs champions peuvent avoir le meme role (many to many)
+plusieurs champions peuvent avoir le meme type de portée (many to many)
+une régions peut contenir plusieurs champions (many to many)
+plusieurs champions peuvent etre du meme genre (1 to many)
 
 
 
