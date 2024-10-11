@@ -11,7 +11,7 @@ Quels informations sont uniques à un champion ? Les informations non uniques se
 
 3. Identification des entités secondaires
 Outre les champions, quelles autres catégories d'informations sont importantes dans League of Legends et pourront être modélisées sous forme d'entités ?
-  Le genre, role, espece, ressource, portee, region et date de sortie
+  Le genre, role, espece, ressource, portee, region et date de sortie, compétences
 
 4. Définition des attributs pour les entités secondaires
 Pour chaque entité secondaire que vous avez identifiée, quelles informations sont nécessaires pour la décrire ?
