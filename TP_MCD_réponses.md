@@ -33,7 +33,7 @@ Cette caractéristique peut-elle être partagée par plusieurs champions ?
   Il est possible que plusieurs champions partagent cette caractéristique.
   
 Comment ces réponses se traduisent-elles en termes de cardinalités dans votre modèle ?
-(0,n)
+(n,n)
   
   
   
