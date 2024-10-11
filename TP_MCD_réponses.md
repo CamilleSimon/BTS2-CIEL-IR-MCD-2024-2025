@@ -3,7 +3,9 @@
 L'information unique à chaque champion est son nom.
 3) Les autres entitées importantes sont le genre, le(s) role(s), le(s) espèce(s), la ressource utilisé, le type de portée, la/les région(s), l'année de sortie et les compétences.
 4) Les informations nécessaires sont leurs nom.
+
 5/6)
+
 a) Un champion possède un genre et un genre peut appartenir à plusieurs champion. 1:N
 
 b) Un champion possède un ou plusieurs rôles et rôle peut appartenir à plusieurs champion. 1..N:N
