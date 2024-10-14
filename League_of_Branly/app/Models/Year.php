@@ -12,7 +12,7 @@ class Year extends Model
     protected $table = 'years';
 
     // Primary key if not 'id'
-    protected $primaryKey = 'years_id';
+    protected $primaryKey = 'year_id';
 
     // Specify which fields can be mass assigned
     protected $fillable = ['year'];
