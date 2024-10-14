@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('title')->nullable();
             $table->text('lore')->nullable();
-            $table->date('release_date')->nullable();
             $table->foreignId('gender_id')->nullable()->constrained();
             $table->foreignId('resource_id')->nullable()->constrained('resources');
             $table->foreignId('year_id')->nullable()->constrained();
