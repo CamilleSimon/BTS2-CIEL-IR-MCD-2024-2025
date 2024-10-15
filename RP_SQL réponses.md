@@ -37,3 +37,20 @@ INSERT INTO champion_specie (champion_id, specie_id)
 VALUES (11, 9);
 
 ## 4 :
+
+SELECT * FROM champions;
+
+## 5 :
+
+SELECT * FROM champions WHERE name LIKE '%ar%';
+
+## 6 :
+
+UPDATE champions SET popularity = abs(RANDOM() % 10) +1;
+
+## 7 :
+
+DELETE FROM champions WHERE name = 'Fiddlesticks';
+
+## 8 :
+
