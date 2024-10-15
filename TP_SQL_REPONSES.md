@@ -1,7 +1,7 @@
 1. Création d'une table
 Créez une table champions avec les colonnes appropriées basées sur le MCD fourni.
 
-CREATE TABLE cahmpions (
+CREATE TABLE champions (
   id_chamipons INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(50),
   title VARCHAR(50),
