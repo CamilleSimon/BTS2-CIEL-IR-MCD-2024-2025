@@ -45,3 +45,12 @@ Select * from champions;
 
 Select * from champions where name LIKE '%ar%';
 
+6. Modification d'un enregistrement
+
+UPDATE champions SET popularity = abs(RANDOM() % 10)+1
+
+7. Suppression d'un enregistrement
+
+DELETE from champions where name = 'Fiddlesticks ';
+
+
