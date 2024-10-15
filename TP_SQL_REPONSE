@@ -1,0 +1,7 @@
+1. Création d'une table
+Créez une table champions avec les colonnes appropriées basées sur le MCD fourni.
+2. Modification d'une table
+Ajoutez une nouvelle colonne popularity de type INT à la table champions:
+ALTER TABLE champions ADD popularity INT;
+3. Insertion de données
+INSERT INTO CHAMPIONS (nom, titre, lore, gender_id, species, resource_id, portée, région principal, created_at, popularity) VALUES (fiddlesticks, the ancient fear, Something has awoken in Runeterra. Something ancient. Something terrible. The
