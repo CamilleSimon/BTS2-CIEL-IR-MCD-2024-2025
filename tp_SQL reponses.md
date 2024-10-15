@@ -14,7 +14,7 @@ FOREIGN KEY (year_id) REFERENCES year(year_id)
 alter table champion
 add popularity INT;
 
-Insertion de données
+3.Insertion de données
 INSERT INTO champions (name, title, lore, gender_id ,resource_id, year_id, popularity)
 VALUES ('Fiddlesticks', 'The Ancient Fear', 'Something has awoken in Runeterra.
 Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, 
@@ -55,8 +55,8 @@ DELETE from champions where name = 'Fiddlesticks ';
 
 8. Jointure avec les positions
 
-Select champions."name,position."name",
-FROM champions ,
+Select champion."name,position."name",
+FROM champion ,
 champion.position ,
 position,
-where
+where champion.Id= champion.position.champion.Id,
