@@ -36,3 +36,12 @@ VALUES (11,9);
 
 INSERT INTO champion_region(champion_id, region_id)
 VALUES (11,14);
+
+4. Récupération de tous les champions
+   
+Select * from champions;
+
+6. Recherche de champions par nom
+
+Select * from champions where name LIKE '%ar%';
+
