@@ -54,3 +54,9 @@ DELETE FROM champions WHERE name = 'Fiddlesticks';
 
 ## 8 :
 
+SELECT c."name", p."name"
+FROM champions c,
+champion_position cp,
+position p
+WHERE c.champion_id = cp.champion_id,
+cp.champion_id = p.position_id;
