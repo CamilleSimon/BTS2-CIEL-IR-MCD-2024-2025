@@ -41,7 +41,7 @@ VALUES (11,14);
    
 Select * from champions;
 
-6. Recherche de champions par nom
+5. Recherche de champions par nom
 
 Select * from champions where name LIKE '%ar%';
 
@@ -53,4 +53,10 @@ UPDATE champions SET popularity = abs(RANDOM() % 10)+1
 
 DELETE from champions where name = 'Fiddlesticks ';
 
+8. Jointure avec les positions
 
+Select champions."name,position."name",
+FROM champions ,
+champion.position ,
+position,
+where
