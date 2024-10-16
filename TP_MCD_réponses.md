@@ -18,7 +18,7 @@ TP MCD
     -un champion peut possèder plusieur région et une région peut etre possédé par plusieurs champion
     -un champion possède une année de sortie et une année de sortie peut etre possédé par plusieur champion
 
-6) -ressource vers champion: (1,n)
+6) -ressource vers champion: (1,n)  \n
    -champion vers ressource : (1,1)
    -genre vers champion : (1,n)
    -champion vers genre : (1,1)
