@@ -31,3 +31,8 @@ INSERT INTO champion_region (champion_region_id,champion_id,region_id) VALUES (1
 4)
 
 SELECT * FROM champions ORDER BY name
+5)
+SELECT name FROM champions WHERE name LIKE '%ar%';
+
+6)
+
