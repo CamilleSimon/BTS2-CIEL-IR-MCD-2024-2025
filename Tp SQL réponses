@@ -1,5 +1,5 @@
 1)
-CREATE TABLE champion
+CREATE TABLE champions
 (
    id INT champion_id;
    name VARCHAR(50);
@@ -11,14 +11,29 @@ CREATE TABLE champion
 )
 
 2) 
-ALTER TABLE champions
+ALTER TABLE champion
 ADD popularity INT;
 
-3)INSERT INTO TABLE champions(nom, titre, lore, gender_id, species, resource_id, year_id, range_types, regions, year_id)
-VALUES('Fiddlesticks','The Ancient Fear','Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned','Autre','Démon','Mana','A distance','Runeterra','2009',)
+3)INSERT INTO TABLE champions(name, title, lore, gender_id, species, resource_id, year_id, range_types, regions, year_id,popularity)
+VALUES('Fiddlesticks','The Ancient Fear','Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned','Autre','Démon','Mana','A distance','Runeterra','2009','5/10')
 
-4) SELECT * FROM champions;
+INSERT INTO champion_position(champion_id, position_id)
+VALUES ('11', '2') 
+INSERT INTO champion_range(champion_id, range_id)
+VALUES ('11', '2') 
+INSERT INTO regions(name, lore)
+VALUES ('Runeterra') 
+INSERT INTO champion_region(champion_id, region_id)
+VALUES ('11', '14') 
+INSERT INTO champion_position(champion_id, specie_id)
+VALUES ('11', '9') 
 
-5)SELECT * FROM champions
 
-6) UPDATE champions RAND(1
+
+4) SELECT * FROM champions order by name;
+
+5)SELECT * FROM champions WHERE name LIKE '%ar%';
+
+6) UPDATE champions Set popularity = abs(RANDOM
+
+7)DELETE FROM champions WHERE name = "Darius";
