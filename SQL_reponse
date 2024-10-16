@@ -1,4 +1,4 @@
---1 -- CREATE Table Champion
+--1 -- CREATE Table champions
 (
 champion_id int PRIMARY KEY NOT NULL,
 name varchar(50),
@@ -8,10 +8,24 @@ resource_id int,
 year_id int;
 )
 
---2-- ALTER TABLE Champion
+--2-- ALTER TABLE champions
 ADD popularity INT
 
 --3--INSERT INTO champions VALUES ('Fiddlesticks','The Ancient Fear,Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.','Autre','Démon','Mana','À distance','Runeterra','2009',5)
 
---4-- SELECT * FROM Champion
+--4-- SELECT * FROM champions
       ORDER BY name ASC
+
+--5-- SELECT * FROM champions
+      WHERE name = 'ar'
+
+--6--
+
+--7-- DELETE FROM champions
+      WHERE name = 'Garen'
+
+--8-- SELECT c.name,p.name FROM champions c
+      JOIN champion_position cp ON c.champion_id = cp.champion_id
+      JOIN position p ON cp.position.id = p.position_id
+
+--9--
