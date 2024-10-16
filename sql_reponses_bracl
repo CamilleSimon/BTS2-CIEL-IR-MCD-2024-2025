@@ -100,4 +100,9 @@ GROUP BY c.resource_id;
 
 /_/_/_/_/__/  10  /_/_/_/_/_/_/_/_/_
 
+SELECT c.name FROM champions c
+JOIN champion_region cr ON cr.champion_id = c.champion_id
+JOIN regions r ON cr.region_id = r.region_id
+WHERE r.region_id = 2;
 
+/_/_/_/_/_/ 11 /_/_/_/_/_/_/_/_
