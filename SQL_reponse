@@ -1,4 +1,4 @@
---1 -- CREATE Table Champion
+--1 -- CREATE Table Champion2
 (
 champion_id int NOT NULL,
 name varchar(50) UNIQUE,
@@ -13,20 +13,35 @@ FOREIGN KEY (resource_id) REFERENCES Resource(resource_id),
 FOREIGN KEY (year_id) REFERENCES Year(year_id)
 )
 
---2-- ALTER TABLE Champion
+--2-- ALTER TABLE Champion2
       ADD popularity INT
 
---3--INSERT INTO Champion VALUES ('Fiddlesticks','The Ancient Fear,Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.','Autre','Démon','Mana','À distance','Runeterra','2009',5)
 
---4-- SELECT * FROM Champion
+--3--
+INSERT INTO Champion2 (champion_id,name,title,lore,gender_id,resource_id,year_id,popularity) VALUES (
+11,
+'Fiddlesticks',
+'The Ancient Fear',
+'Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.',
+3,
+1,
+1,
+5)
+
+INSERT INTO champion_region VALUES (15,11,14)
+INSERT INTO champion_range (champion_range_id, champion_id,range_id ) VALUES (12,11,2)
+INSERT INTO champion_specie (champion_species_id, champion_id, specie_id) VALUES (15,11,9)
+INSERT INTO champion_position (champion_position_id, champion_id, position_id) VALUES (15,11,2)
+
+--4-- SELECT * FROM Champion2
       ORDER BY name ASC
 
---5-- SELECT * FROM Champion
-      WHERE name = 'ar'
+--5-- SELECT * FROM champions
+      WHERE name LIKE '%ar%'
 
 --6--
 
---7-- DELETE FROM Champion
+--7-- DELETE FROM Champion2
       WHERE name = 'Garen'
 
 --8-- SELECT c.name,p.name FROM Champion c
@@ -37,8 +52,18 @@ FOREIGN KEY (year_id) REFERENCES Year(year_id)
 --9-- SELECT
       COUNT(c.name)
 
---10-- SELECT * FROM Champion c
+--10-- SELECT * FROM Champion2 c
       JOIN champion_region cr ON c.champion_id = cr.champion_id
       JOIN region r ON cr.region_id = r.region_id
       WHERE r.name = 'Demacia'
+
+--11-- SELECT * FROM Champion2
+      JOIN champion_region cr ON c.champion_id = cr.champion_id
+      JOIN regions r ON cr.region_id = r.region_id
+      WHERE regions > 1
+
+--12-- SELECT * FROM Champion2
+      JOIN champion_position cp ON c.champion_id = cp.champion_id
+      JOIN positions p ON cp.position.id = p.position_id
+      WHERE
 
