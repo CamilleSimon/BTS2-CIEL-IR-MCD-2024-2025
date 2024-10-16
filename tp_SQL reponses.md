@@ -38,8 +38,10 @@ INSERT INTO champion_region(champion_id, region_id)
 VALUES (11,14);
 
 4. Récupération de tous les champions
+
    
-Select * from champions;
+Select * from champions
+ORDER BY champions ASC;
 
 5. Recherche de champions par nom
 
