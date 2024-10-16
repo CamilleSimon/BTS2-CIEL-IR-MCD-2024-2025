@@ -1,8 +1,9 @@
---1 -- CREATE Table champions
+--1 -- CREATE Table Champion
 (
 champion_id int NOT NULL,
-name varchar(50),
+name varchar(50) UNIQUE,
 lore varchar(50),
+title text,
 gender_id int,
 resource_id int,
 year_id int,
@@ -12,23 +13,23 @@ FOREIGN KEY (resource_id) REFERENCES Resource(resource_id),
 FOREIGN KEY (year_id) REFERENCES Year(year_id)
 )
 
---2-- ALTER TABLE champions
+--2-- ALTER TABLE Champion
 ADD popularity INT
 
---3--INSERT INTO champions VALUES ('Fiddlesticks','The Ancient Fear,Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.','Autre','Démon','Mana','À distance','Runeterra','2009',5)
+--3--INSERT INTO Champion VALUES ('Fiddlesticks','The Ancient Fear,Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.','Autre','Démon','Mana','À distance','Runeterra','2009',5)
 
---4-- SELECT * FROM champions
+--4-- SELECT * FROM Champion
       ORDER BY name ASC
 
---5-- SELECT * FROM champions
+--5-- SELECT * FROM Champion
       WHERE name = 'ar'
 
 --6--
 
---7-- DELETE FROM champions
+--7-- DELETE FROM Champion
       WHERE name = 'Garen'
 
---8-- SELECT c.name,p.name FROM champions c
+--8-- SELECT c.name,p.name FROM Champion c
       JOIN champion_position cp ON c.champion_id = cp.champion_id
       JOIN position p ON cp.position.id = p.position_id
 
