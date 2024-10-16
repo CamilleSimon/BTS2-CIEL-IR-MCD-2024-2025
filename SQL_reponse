@@ -32,6 +32,13 @@ FOREIGN KEY (year_id) REFERENCES Year(year_id)
 --8-- SELECT c.name,p.name FROM Champion c
       JOIN champion_position cp ON c.champion_id = cp.champion_id
       JOIN position p ON cp.position.id = p.position_id
-      count
+      
 
---9--
+--9-- SELECT
+      COUNT(c.name)
+
+--10-- SELECT * FROM Champion c
+      JOIN champion_region cr ON c.champion_id = cr.champion_id
+      JOIN region r ON cr.region_id = r.region_id
+      WHERE r.name = 'Demacia'
+
