@@ -1,0 +1,17 @@
+CREATE TABLE champions
+(
+   id INT champion_id;
+   name VARCHAR(50);
+   lore VARCHAR(50);
+   Clé étrangère(gender_id) REFERENCES gender(gender_id)
+   Clé étrangère(year_id) REFERENCES year(year_id)
+   Clé étrangère(resource_id) REFERENCES resource(resource_id)
+)
+ 
+ALTER TABLE champions
+ADD popularity INTEGER;
+
+INSERT INTO TABLE champions(name, title, lore, gender_id, species, resource_id, year_id, range_types, regions, year_id)
+VALUES('Fiddlesticks',
+       'The Ancient Fear','Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned'
+       ,'Autre','Démon','Mana','A distance','Runeterra','2009',)
