@@ -13,7 +13,7 @@ FOREIGN KEY (resource_id) REFERENCES Resource(resource_id),
 FOREIGN KEY (year_id) REFERENCES Year(year_id)
 )
 
---2-- ALTER TABLE Champion2
+--2-- ALTER TABLE champions
       ADD popularity INT
 
 
@@ -39,7 +39,8 @@ INSERT INTO champion_position (champion_position_id, champion_id, position_id) V
 --5-- SELECT * FROM champions
       WHERE name LIKE '%ar%'
 
---6--
+--6--UPDATE champions 
+	SET popularity = abs(RANDOM()%10)
 
 --7-- DELETE FROM Champion2
       WHERE name = 'Fiddlesticks'
