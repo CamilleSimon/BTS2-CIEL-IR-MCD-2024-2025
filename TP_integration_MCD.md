@@ -63,7 +63,7 @@ erDiagram
         varchar(50) champion_name
     }
     GENDER {
-        int id_gender PK
+        int gender_id PK
         varchar(20) name
     }
     POSITION {
@@ -92,13 +92,13 @@ erDiagram
         int year_number
     }
 
-    CHAMPION ||--o| GENDER : "has"
-    CHAMPION }o--o{ POSITION : "can_play_as"
-    CHAMPION }o--o{ SPECIE : "belongs_to"
-    CHAMPION ||--o| RESOURCE : "uses"
-    CHAMPION }o--o{ RANGE : "has"
-    CHAMPION }o--o{ REGION : "comes_from"
-    CHAMPION ||--o| YEAR : "released_in"
+    CHAMPION }o--|| GENDER : "has"
+    CHAMPION }o--|{ POSITION : "can_play_as"
+    CHAMPION }o--|{ SPECIE : "belongs_to"
+    CHAMPION }o--|| RESOURCE : "uses"
+    CHAMPION }o--|{ RANGE : "has"
+    CHAMPION }o--|{ REGION : "comes_from"
+    CHAMPION }o--|| YEAR : "released_in"
 ```
 
 ### 1. Création des migrations
@@ -110,7 +110,6 @@ Ouvrez le terminal de votre conteneur dans Docker Desktop.
 **Tâche :** Créez les migrations pour toutes les tables nécessaires.
 
 ```bash
-php artisan make:migration create_champions_table
 php artisan make:migration create_genders_table
 php artisan make:migration create_positions_table
 php artisan make:migration create_species_table
@@ -118,6 +117,7 @@ php artisan make:migration create_resources_table
 php artisan make:migration create_ranges_table
 php artisan make:migration create_regions_table
 php artisan make:migration create_year_table
+php artisan make:migration create_champions_table
 php artisan make:migration create_champion_position_table
 php artisan make:migration create_champion_specie_table
 php artisan make:migration create_champion_range_table
@@ -132,7 +132,7 @@ Naviguez vers le dossier `database/migrations`.
 
 **Tâche :** Pour chaque fichier de migration créé, définissez la structure de la table correspondante en vous appuyant sur votre MCD étendu.
 
-Les relations `one-to-many` vont être matérialisées par des clés étrangères dans la table `champion`.
+Chaque ligne de la fonction `up` correspond à la création d'une colonne de notre base de données. Les relations `one-to-many` vont être matérialisées par des clés étrangères dans la table `champion`.
 
 Exemple pour la table `champions` :
 
@@ -140,10 +140,11 @@ Exemple pour la table `champions` :
 public function up()
 {
     Schema::create('champions', function (Blueprint $table) {
-        $table->id();
+        $table->id('champion_id);
         $table->string('name', 50);
         $table->foreignId('gender_id')->constrained();
         $table->foreignId('resource_id')->constrained();
+        $table->foreignId('year_id')->constrained();
         $table->timestamps();
     });
 }
@@ -159,7 +160,7 @@ public function up()
         $table->id('champion_position_id');
         $table->foreignId('champion_id')->constrained();
         $table->foreignId('position_id')->constrained();
-        $table->timestamps();
+        $table->unique(['champion_id', 'position_id']);
     });
 }
 ```
@@ -177,10 +178,12 @@ php artisan make:model Champion
 php artisan make:model Gender
 php artisan make:model Position
 php artisan make:model Specie
-php artisan make:model Resource
 php artisan make:model Range
 php artisan make:model Region
+php artisan make:model Resource
+php artisan make:model Year
 ```
+
 ### 4. Définition des relations dans les modèles
 
 Naviguez vers le dossier `app/Models`.
@@ -224,6 +227,11 @@ class Champion extends Model
     public function regions()
     {
         return $this->belongsToMany(Region::class);
+    }
+
+    public function year()
+    {
+        return $this->belongTo(Year::class);
     }
 }
 ```
