@@ -1,11 +1,15 @@
 --1 -- CREATE Table champions
 (
-champion_id int PRIMARY KEY NOT NULL,
+champion_id int NOT NULL,
 name varchar(50),
 lore varchar(50),
 gender_id int,
 resource_id int,
-year_id int;
+year_id int,
+PRIMARY KEY (champion_id),
+FOREIGN KEY (gender_id) REFERENCES Gender(gender_id),
+FOREIGN KEY (resource_id) REFERENCES Resource(resource_id),
+FOREIGN KEY (year_id) REFERENCES Year(year_id)
 )
 
 --2-- ALTER TABLE champions
