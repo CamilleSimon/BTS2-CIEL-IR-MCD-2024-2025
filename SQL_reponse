@@ -42,28 +42,28 @@ INSERT INTO champion_position (champion_position_id, champion_id, position_id) V
 --6--
 
 --7-- DELETE FROM Champion2
-      WHERE name = 'Garen'
+      WHERE name = 'Fiddlesticks'
 
---8-- SELECT c.name,p.name FROM Champion c
+--8-- SELECT c.name,p.name FROM champions c
       JOIN champion_position cp ON c.champion_id = cp.champion_id
-      JOIN position p ON cp.position.id = p.position_id
+      JOIN positions p ON cp.position_id = p.position_id
       
 
 --9-- SELECT
-      COUNT(c.name)
+      HAVING COUNT(c.name)
 
 --10-- SELECT * FROM Champion2 c
       JOIN champion_region cr ON c.champion_id = cr.champion_id
       JOIN region r ON cr.region_id = r.region_id
       WHERE r.name = 'Demacia'
 
---11-- SELECT * FROM Champion2
+--11-- SELECT * FROM champions c
       JOIN champion_region cr ON c.champion_id = cr.champion_id
-      JOIN regions r ON cr.region_id = r.region_id
-      WHERE regions > 1
+      GROUP BY cr.champion_id
+      HAVING COUNT(cr.champion_id) > 1 
 
---12-- SELECT * FROM Champion2
+--12-- SELECT * FROM champions c
       JOIN champion_position cp ON c.champion_id = cp.champion_id
-      JOIN positions p ON cp.position.id = p.position_id
-      WHERE
+      GROUP BY cp.champion_id
+      HAVING COUNT(cp.champion_id) > 1
 
