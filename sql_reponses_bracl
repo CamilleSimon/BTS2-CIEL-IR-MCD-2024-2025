@@ -1,0 +1,14 @@
+CREATE table championsss -- création de la table champions
+(
+champion_id int NOT NULL,
+name varchar(50) UNIQUE,
+title varchar(50),
+lore text,
+gender_id int,
+resource_id int,
+year_id int,
+PRIMARY KEY (champion_id),
+FOREIGN KEY (gender_id) REFERENCES genders (gender_id),
+FOREIGN KEY (ressource_id) REFERENCES resources (resource_id),
+FOREIGN KEY (year_id) REFERENCES years (year_id)
+);
