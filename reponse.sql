@@ -35,4 +35,7 @@ SELECT * FROM champions ORDER BY name
 SELECT name FROM champions WHERE name LIKE '%ar%';
 
 6)
+UPDATE champions SET popularity = abs(RANDOM() % 10);
 
+7)
+DELETE FROM champions WHERE champion_id = 11;
