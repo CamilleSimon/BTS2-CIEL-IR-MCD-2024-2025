@@ -14,7 +14,7 @@ FOREIGN KEY (year_id) REFERENCES Year(year_id)
 )
 
 --2-- ALTER TABLE champions
-      ADD popularity INT
+      ADD popularity INT --Ajoute colonne popularité en int--
 
 
 --3--
@@ -34,20 +34,21 @@ INSERT INTO champion_specie (champion_species_id, champion_id, specie_id) VALUES
 INSERT INTO champion_position (champion_position_id, champion_id, position_id) VALUES (15,11,2)
 
 --4-- SELECT * FROM Champion2
-      ORDER BY name ASC
+      ORDER BY name ASC --Plus petit au plus grand--
 
 --5-- SELECT * FROM champions
-      WHERE name LIKE '%ar%'
+      WHERE name LIKE '%ar%' --Cherche les nam avec 'ar' dans le nom --
 
 --6--UPDATE champions 
-	SET popularity = abs(RANDOM()%10)
+	SET popularity = abs(RANDOM()%10) --abs = valeur positive  --
 
 --7-- DELETE FROM Champion2
       WHERE name = 'Fiddlesticks'
 
---8-- SELECT c.name,p.name FROM champions c
+--8-- SELECT c.name,GROUP_CONCAT(p.name) FROM champions c  --GROUP_CONCAT permet de concatener plusieurs valeurs dans une seule case--
       JOIN champion_position cp ON c.champion_id = cp.champion_id
       JOIN positions p ON cp.position_id = p.position_id
+      GROUP BY c.name
       
 
 --9-- SELECT r.name,COUNT(c.resource_id) FROM champions c
