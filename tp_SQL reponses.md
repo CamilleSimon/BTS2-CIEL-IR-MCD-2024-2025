@@ -41,7 +41,7 @@ VALUES (11,14);
 
    
 Select * from champions
-ORDER BY champions ASC;
+ORDER BY name ASC;
 
 5. Recherche de champions par nom
 
@@ -57,8 +57,12 @@ DELETE from champions where name = 'Fiddlesticks ';
 
 8. Jointure avec les positions
 
-Select champion."name,position."name",
-FROM champion ,
-champion.position ,
-position,
-where champion.Id= champion.position.champion.Id,
+SELECT 
+    c.name, p.name
+FROM 
+    champions AS c
+JOIN 
+    champion_position cp ON cp.id_champion = c.champion_id
+JOIN 
+    positions p ON cp.champions = p.position_id
+
