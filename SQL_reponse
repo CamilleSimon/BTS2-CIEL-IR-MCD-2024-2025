@@ -49,13 +49,15 @@ INSERT INTO champion_position (champion_position_id, champion_id, position_id) V
       JOIN positions p ON cp.position_id = p.position_id
       
 
---9-- SELECT
-      HAVING COUNT(c.name)
+--9-- SELECT r.name,COUNT(c.resource_id) FROM champions c
+	JOIN resources r ON c.resource_id = r.resource_id
+      GROUP BY c.resource_id
+      HAVING COUNT(c.resource_id)
 
---10-- SELECT * FROM Champion2 c
+--10-- SELECT * FROM champions c
       JOIN champion_region cr ON c.champion_id = cr.champion_id
-      JOIN region r ON cr.region_id = r.region_id
-      WHERE r.name = 'Demacia'
+      JOIN regions r ON cr.region_id = r.region_id
+      WHERE r.name = 'Bilgewater'
 
 --11-- SELECT * FROM champions c
       JOIN champion_region cr ON c.champion_id = cr.champion_id
