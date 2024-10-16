@@ -6,3 +6,5 @@ INSERT INTO "database"."champions" ("champion_id", "name", "title", "lore", "gen
 4)
 SELECT * FROM "champions"
 5)
+SELECT  "champion_id", SUBSTR("name", 1, 256) FROM "database"."champions" WHERE "name" LIKE '%ar%'
+6)
