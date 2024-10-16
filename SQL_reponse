@@ -54,7 +54,7 @@ INSERT INTO champion_position (champion_position_id, champion_id, position_id) V
 --9-- SELECT r.name,COUNT(c.resource_id) FROM champions c
 	JOIN resources r ON c.resource_id = r.resource_id
       GROUP BY c.resource_id
-      HAVING COUNT(c.resource_id)
+      --HAVING COUNT(c.resource_id)--
 
 --10-- SELECT * FROM champions c
       JOIN champion_region cr ON c.champion_id = cr.champion_id
