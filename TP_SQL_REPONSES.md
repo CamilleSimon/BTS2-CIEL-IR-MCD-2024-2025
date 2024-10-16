@@ -66,5 +66,5 @@ WHERE 'name'= Fiddlesticks
 Écrivez une requête qui récupère tous les champions avec leurs positions associées. Votre requête affichera deux colonnes :
 
 Le nom des champions
-La ou les noms des positions
+La ou les noms des positions 
 
