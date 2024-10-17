@@ -1,0 +1,21 @@
+1. Identification des entités principales
+-l'élément central est les personnagess
+
+2. Définition des attributs
+-Genre,Espèce,Univers,Poids,Première apparition,Plate-forme d'origine
+-nom personnage clé primaire type int
+-type entier
+
+3. Identification des entités secondaires
+-autre table: univers,première apparition ;attribut: poids,genre,espèce,date origine
+4. Définition des attributs pour les entités secondaires
+-Nom,ID
+5. Établissement des relations
+-les pesonnages vont posseder les entité secondaire 
+-Un personnage "possede" un poid,un genre,une espèce et une date d'origine 
+-Un personnage "apartient" a un univers
+Un personnage "apartient" a une première apparition
+6. Détermination des cardinalités
+-Un personnage ne peut pas avoir plusieurs espèce,poids,genre,date d'origine de cette caractéristique,cette espèce peux avoir plusieurs personnage 
+un genre peut avoir plusieurs personnage,un poids possède plusieurs personnage 
+-première apparition peut avoir plusieur personnage
