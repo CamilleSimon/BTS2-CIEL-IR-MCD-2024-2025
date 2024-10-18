@@ -99,10 +99,9 @@ WHERE champion_id =9
 
 8. Jointure avec les positions
 
-SELECT c.name, p.name AS position_name
-FROM champions c
-JOIN champion_position p ON c.champion_position_id = p.position_id;
-
+SELECT name, name AS champion_position_id
+FROM champions
+JOIN 
 
 9. Groupement par ressource
 
