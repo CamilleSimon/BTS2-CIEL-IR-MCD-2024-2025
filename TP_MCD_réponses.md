@@ -17,7 +17,7 @@ TP MCD --------------------------------------
  5. Établissement des relations
 1,2) Champion a 1 genre / un genre appartient a plusieurs champions
 Champion peut avoir n role / un role appartient a plusieur champion
-Champion peut avoir de 1 a 3 espece / une espece appartient a plusieur champion
+Champion peut avoir de 1 a n espece / une espece appartient a plusieur champion
 Champion peut avoir une années de sortie / Une années de sortie peut avoir plusieur champion
 Champion peut avoir n regions / Une regions peut avoir plusieur champion
 Champion peut avoir n portée / Une portée peut avoir plusieur Champion
@@ -28,7 +28,7 @@ Champion peut avoir une ressource / une ressource peut avoir plusieur Champion
 
    Champion (1,n) Role / Role (1,n) Champion -> Un ou plusieurs de Genre vers Champion et de Champion vers Genre double fleche
    
-   Champion (1,3) Espece / Espece (1,n) Champion -> Un ou plusieurs de espece vers Champion et de Champion vers espece double fleche
+   Champion (1,n) Espece / Espece (1,n) Champion -> Un ou plusieurs de espece vers Champion et de Champion vers espece double fleche
    
    Champion (1,1) Années de sortie / Années de sortie (1,n) Champion -> Un ou plusieurs  de Année de srotie vers Champion
    
@@ -99,8 +99,16 @@ WHERE champion_id =9
 
 8. Jointure avec les positions
 
-SELECT name, champion_position_id FROM champions, champion_position
+SELECT c.name, p.name AS position_name
+FROM champions c
+JOIN champion_position p ON c.champion_position_id = p.position_id;
+
 
 9. Groupement par ressource
+
+10. Champions par région
+    
+SELECT * FROM champions
+WHERE region_id = 'Runeterra';
 
 
