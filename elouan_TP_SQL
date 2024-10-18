@@ -1,0 +1,40 @@
+
+CREATE TABLE champion
+(
+	id_champion INTEGER PRIMARY KEY,
+	name VARCHAR(50) UNIQUE,
+	lore text,
+	gender_id INTEGER,
+	ressource_id INTEGER,
+	year_id INTEGER,
+	FOREIGN KEY (gender_id) REFERENCES genders(gender_id),
+	FOREIGN KEY (ressource_id) REFERENCES resources(ressource_id),
+	FOREIGN KEY (year_id) REFERENCES years(year_id)
+);
+
+ALTER TABLE champions
+ADD popularity INTEGER
+
+
+INSERT INTO champions (name,title,lore,popularity,gender_id,resource_id,year_id)
+VALUES('Fiddlesticks','The Ancient Fear','Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.',5,3,1,1);
+
+INSERT INTO champion_specie(champion_id, specie_id)
+VALUES((SELECT champion_id FROM champions WHERE name = 'Fiddlesticks'),9);
+
+INSERT INTO champion_range(champion_id, range_id)
+VALUES((SELECT champion_id FROM champions WHERE name = 'Fiddlesticks'),2);
+INSERT INTO champion_region(champion_id, region_id)
+VALUES((SELECT champion_id FROM champions WHERE name = 'Fiddlesticks'),14);
+
+SELECT * FROM champions ORDER BY name;
+SELECT * FROM champions where name LIKE '%ar%';
+
+UPDATE champions SET popularity = ABS(1 + RANDOM() % 10);
+--ABS permet de renvoyer une valeur absolue et enlève les options de -1 à -10
+
+DELETE FROM champions WHERE name = 'Zoe';
+
+SELECT name,position_id FROM champions
+JOIN champion_position
+ON champions.champion_id = champion_position.champion_id;
