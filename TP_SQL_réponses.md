@@ -1,4 +1,5 @@
 question 1:
+
 Cette requète créer la table champion avec comme colonnes l'id du champion qui est la clé primaire, son nom, son titre si il en a un, son histoire s'il en a un aussi, l'id de son genre, l'id de la ressource qu'il utilise et l'id de son année de sortie qui seront les clés étrangères vers le tables stockant ces informations.
 
 
@@ -31,39 +32,46 @@ Cette requète créer la table champion avec comme colonnes l'id du champion qui
 
 question 2:
 
+On ajoute à la table champions une colonne popularity qui sera rempli par des entiers.
+
 	ALTER TABLE champions
 	
 	ADD "popularity" INTEGER NOT NULL
 
 question 3:
 
-INSERT INTO champions
+On ajoute à la table champions le champion Fiddlestick en indiquant tous les attributs suivant: name, title, lore, gender_id, resource_id, year_id, popularity; auquels on donne les valeurs qui suivent dans le code.
 
-(name,title,lore,gender_id,resource_id,year_id,popularity)
+	INSERT INTO champions
+	
+	(name,title,lore,gender_id,resource_id,year_id,popularity)
 
-VALUES
+	VALUES
+	
+	('Fiddlesticks','The Ancient Fear','Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it 
+	feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of 
+	the shape that appears almost human... Fiddlesticks has returned.',3,1,1,5)
+ 
+Nous ajoutons ensuite sa position, son type de portée, sa région et son espèce grâce aux tables pivots:
 
-('Fiddlesticks','The Ancient Fear','Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it 
-feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of 
-the shape that appears almost human... Fiddlesticks has returned.'
+	INSERT INTO champion_position (champion_id,position_id)
+	
+	VALUES (11,2)
+ 
 
-,3,1,1,5)
+	INSERT INTO champion_range (champion_id,range_id)
+	
+	VALUES (11,2)
+ 
 
-INSERT INTO champion_position (champion_id,position_id)
+	INSERT INTO champion_region (champion_id,region_id)
+	
+	VALUES (11,14)
+ 
 
-VALUES (11,2)
-
-INSERT INTO champion_range (champion_id,range_id)
-
-VALUES (11,2)
-
-INSERT INTO champion_region (champion_id,region_id)
-
-VALUES (11,14)
-
-INSERT INTO champion_specie (champion_id,specie_id)
-
-VALUES (11,9)
+	INSERT INTO champion_specie (champion_id,specie_id)
+	
+	VALUES (11,9)
 
 question 4:
 
