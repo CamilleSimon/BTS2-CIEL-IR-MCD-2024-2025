@@ -53,7 +53,7 @@ VALUES (/*valeurs à ajouter à mettre dans l'ordre pour bien qu'ils soient ajou
     5  
 );  
 
-4)SELECT * FROM champions /*selectionne tous (*) dans la table champion*/  
+4)SELECT * FROM champions /*selectionne tous (asterix) dans la table champion*/  
 ORDER BY name ASC;/*range les names par ordre alphabetique ASC tri croissant*/  
 
 5)SELECT name FROM champions /*choisi les names dans la table champions*/  
