@@ -78,9 +78,26 @@ Vous travaillez sur une base de données SQLite qui gère les informations sur l
 
 ### 1. Création d'une table
 Créez une table `champion` avec les colonnes appropriées basées sur le MCD fourni. Après l'exécution de la requête, votre table `champion` doit avoir strictement la même structure que la table `champions`.
-
+CREATE TABLE champion2
+CREATE TABLE "champion2"
+(
+	"champion2_id" INTEGER NOT NULL,
+	"name" VARCHAR,
+	"title" VARCHAR ,
+	"lore" TEXT NULL,
+	"gender_id" INTEGER NULL,
+	"resource_id" INTEGER NULL,
+	"year_id" INTEGER NULL,
+PRIMARY KEY ("champion2_id")
+	CONSTRAINT ("years_id") REF "years" (years_id)
+	CONSTRAINT ("gender_id") REF "gender"(gender_id)
+	CONSTRAINT ("resource_id")REF ""resource"(resource_id)
+)
 ### 2. Modification d'une table
 Ajoutez une nouvelle colonne `popularity` de type INT à la table `champions`.
+.
+alter TABLE champion2
+ADD popularity int 
 
 ### 3. Insertion de données
 Insérez le champion Fiddlesticks dans la table `champions` avec les attributs suivants :
@@ -98,12 +115,24 @@ Insérez le champion Fiddlesticks dans la table `champions` avec les attributs s
 
 Assurez-vous d'insérer également les données nécessaires dans les tables pivots associées (comme `champion_specie` par exemple).
 
+insert into champions(name,title,lore,gender_id,Resource_id,year_id) VALUES ('Fiddlesticks','The Ancient Fear','Something has awoken in Runeterra. Something ancient.
+ Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society,
+ drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, 
+the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. 
+Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.',3,1,1)
+
 ### 4. Récupération de tous les champions
 Écrivez une requête SQL pour récupérer tous les champions, triés par nom.
+
+select name From champion2 
+order by name asc 
 
 ### 5. Recherche de champions par nom
 Implémentez une requête qui permet de trouver des champions dont le nom contient une chaîne spécifique.
 On pourra tester avec la chaîne `ar` qui devra retourner trois noms : `Bard`, `Rengar` et `Gnar`.
+
+select nom from champions 
+where nom LIKE '%ar%'
 
 ### 6. Modification d'un enregistrement
 Mettez à jour la popularité des champions en leur attribuant une valeur aléatoire entre 1 et 10. Utilisez la fonction `RANDOM()` (`RAND()` sous MySQL et `RANDOM()` sous SQLite) pour générer cette valeur aléatoire. 
@@ -112,7 +141,8 @@ Note : `RANDOM()` genère un nombre entre -9223372036854775808 et +9223372036854
 
 ### 7. Suppression d'un enregistrement
 Supprimez un champion spécifique de la table.
-
+delete from champion 
+where 'id' = 15
 ### 8. Jointure avec les positions
 Écrivez une requête qui récupère tous les champions avec leurs positions associées. Votre requête affichera deux colonnes :
 * Le nom des champions
