@@ -1,3 +1,4 @@
+TP MCD --------------------------------------
 
 1.Identification des entités principales
 1)L'élement central qu'on cherche a modéliser est les personnage = "CHAMPION"
@@ -37,4 +38,65 @@ Champion peut avoir une ressource / une ressource peut avoir plusieur Champion
 
   Champion (1,1) Ressource / Ressource (1,n) Champion -> Un ou plusieurs  de ressoruce vers Champion
 7)
+
+TP SQL ----------------------------------------------
+
+1. Création d'une table
+
+CREATE TABLE champions
+(champion_id INT,
+    name VARCHAR(50),
+    lore VARCHAR(50),
+    gender_id INT,
+    resource_id INT,
+    year_id INT) ;
+
+2. Modification d'une table
+
+ALTER TABLE champion
+ADD popularity int ;
+
+3. Insertion de données
+
+ALTER TABLE champions
+ADD champion_specie VARCHAR;
+
+INSERT INTO champions (name,title,lore,gender_id,champion_specie,resource_id,popularity,year_id)
+VALUES
+('Fiddlesticks','The Ancient Fear','Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.','Autre','Démon','Mana',5,2009 )
+
+INSERT INTO champion_range (champion_id,range_id)
+VALUES
+(11,'À distance');
+
+
+INSERT INTO champion_region (champion_id,region_id)
+VALUES
+(11,'Runeterra');
+
+4. Récupération de tous les champions
+
+SELECT name FROM champions
+
+5. Recherche de champions par nom
+
+SELECT name FROM champions
+WHERE  name LIKE '%ar%' ;
+
+6. Modification d'un enregistrement
+
+UPDATE champions  
+SET popularity = abs(random()) % (10 - 1) + 1;
+
+7. Suppression d'un enregistrement
+
+DELETE FROM champions
+WHERE champion_id =9
+
+8. Jointure avec les positions
+
+SELECT name, champion_position_id FROM champions, champion_position
+
+9. Groupement par ressource
+
 
