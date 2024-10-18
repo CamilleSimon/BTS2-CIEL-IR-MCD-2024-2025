@@ -44,12 +44,16 @@ TP SQL ----------------------------------------------
 1. Création d'une table
 
 CREATE TABLE champions
-(champion_id INT,
-    name VARCHAR(50),
+(champion_id INT PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50) NOT NULL,
     lore VARCHAR(50),
     gender_id INT,
     resource_id INT,
-    year_id INT) ;
+    year_id INT
+    FOREIGN KEY (gender_id)REFERENCES genders(gender_id),
+    FOREIGN KEY (ressource_id) REFERENCES resources (ressource_id),
+    FOREIGN KEY (year_id) REFERENCES years(year_id)
+    );
 
 2. Modification d'une table
 
