@@ -1,0 +1,33 @@
+1.Identification des entités principales
+
+- Les Champions
+- Le Nom, le genre, le rôle, l'espèce, la ressource utilisé, le type de portée, la région, la date de sortie.
+
+2.Définition des attributs
+
+-Le Nom(VARCHAR), le genre(VARCHAR), le rôle(VARCHAR), l'espèce(VARCHAR), la ressource utilisé(VARCHAR), le type de portée(VARCHAR), la région(VARCHAR), la date de sortie(DATE).
+-Une clé primaire 
+-VARCHAR et DATE pour les attributs identifiés. <- Pour chacun des attributs ligne 8, tu dois dire si c'est un varchar, char, text,...
+
+3.Identification des entités secondaires
+
+-Les objectifs, les objets, les monstres.
+-Les skins car c'est le même champion mais complètement une autre entité. <- tu veux dire une autre entité. Parce que si c'est un autre modèle, il ne peut pas y avoir de liens entre eux.
+
+4. Définition des attributs pour les entités secondaires
+
+-Il faut des attributs VARCHAR. <- super, mais lesquels ?
+-Il faut mettre le nom de l'attribut et ce que fait l'attribut(un peu comme une description). <- pas très français ça
+
+5. Établissement des relations
+
+-Relation (1:1,n), par exemple le champion peut avoir plusieurs compétences mais les compétences ne peuvent avoir qu'un seul champion. <- quels relations sont (1,n) ?
+-Avec une entité, des attributs, des entités secondaires, puis la connexion logique qui va avec pour les relier.
+
+6. Détermination des cardinalités
+
+-Oui car un champion a plusieurs compétences.
+Normalement non, mais y a sylas et viego qui existent.
+-Principalemet en utilisant la relation (1:1,n) pour lier les champions et les compétences.
+
+7. Création du diagramme
