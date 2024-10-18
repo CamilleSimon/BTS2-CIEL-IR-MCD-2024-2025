@@ -1,4 +1,6 @@
 question 1:
+Cette requète créer la table champion avec comme colonnes l'id du champion qui est la clé primaire, son nom, son titre si il en a un, son histoire s'il en a un aussi, l'id de son genre, l'id de la ressource qu'il utilise et l'id de son année de sortie qui seront les clés étrangères vers le tables stockant ces informations.
+
 
 	CREATE TABLE "champion" (
 	
@@ -23,16 +25,15 @@ question 1:
 		CONSTRAINT "1" FOREIGN KEY ("resource_id") REFERENCES "resources" ("resource_id") ON UPDATE NO ACTION ON DELETE SET NULL,
 	 
 		CONSTRAINT "2" FOREIGN KEY ("gender_id") REFERENCES "genders" ("gender_id") ON UPDATE NO ACTION ON DELETE SET NULL
-	 
-	);
+  	);
 
-CREATE UNIQUE INDEX "champion_name_unique" ON "champion" ("name");
+	CREATE UNIQUE INDEX "champion_name_unique" ON "champion" ("name");
 
 question 2:
 
-ALTER TABLE champions
-
-ADD "popularity" INTEGER NOT NULL
+	ALTER TABLE champions
+	
+	ADD "popularity" INTEGER NOT NULL
 
 question 3:
 
