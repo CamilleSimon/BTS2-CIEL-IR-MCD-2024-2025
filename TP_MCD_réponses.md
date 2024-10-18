@@ -59,6 +59,8 @@ ORDER BY name ASC;/*range les names par ordre alphabetique ASC tri croissant*/
 5)SELECT name FROM champions /*choisi les names dans la table champions*/
 WHERE name LIKE '%ar%'; /* choisi les names ou il y a ar les "%" veut dire tout autre caractere et vu qu'il y a avant "ar" et apres sa permet de selectionne les names ou il presente "ar" peu importe ou il se trouve*/
 
-6)
+6) UPDATE champions/*pour modifier des valeurs d'une ligne dans la table champions*/
+ SET popularity = ABS(RANDOM() % 10)+1;/*met dans la colonne popularity une valeur absolue aléatoire compris entre 1 et 10*/
+
 7)  DELETE FROM champions /*Supprime une ligne de la table champions*/
      WHERE name='Zoe';/*dont la condition est le name = Zoe*/
