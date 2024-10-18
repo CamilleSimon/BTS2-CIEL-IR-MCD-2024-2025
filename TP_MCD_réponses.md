@@ -36,3 +36,6 @@ TP_SQL
 	FOREIGN KEY (resource_id) REFERENCES resources(resource_id),
 	FOREIGN KEY (year_id) REFERENCES years(year_id)
 );
+
+2)ALTER TABLE champions /*permet d'apporter des modifications a la table champions ne se termine pas par une virgule pour pouvoir executer la commande suivante*/
+ADD popularity INT; /*ajout de la colonne popularity dans la table champions*/
