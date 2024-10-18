@@ -92,13 +92,13 @@ erDiagram
         int year_number
     }
 
-    CHAMPION ||--o| GENDER : "has"
-    CHAMPION }o--o{ POSITION : "can_play_as"
-    CHAMPION }o--o{ SPECIE : "belongs_to"
-    CHAMPION ||--o| RESOURCE : "uses"
-    CHAMPION }o--o{ RANGE : "has"
-    CHAMPION }o--o{ REGION : "comes_from"
-    CHAMPION ||--o| YEAR : "released_in"
+    CHAMPION }o--|| GENDER : "has"
+    CHAMPION }o--|{ POSITION : "can_play_as"
+    CHAMPION }o--|{ SPECIE : "belongs_to"
+    CHAMPION }o--|| RESOURCE : "uses"
+    CHAMPION }o--|{ RANGE : "has"
+    CHAMPION }o--|{ REGION : "comes_from"
+    CHAMPION }o--|| YEAR : "released_in"
 ```
 
 ### 1. Création des migrations
@@ -110,7 +110,6 @@ Ouvrez le terminal de votre conteneur dans Docker Desktop.
 **Tâche :** Créez les migrations pour toutes les tables nécessaires.
 
 ```bash
-php artisan make:migration create_champions_table
 php artisan make:migration create_genders_table
 php artisan make:migration create_positions_table
 php artisan make:migration create_species_table
@@ -118,6 +117,7 @@ php artisan make:migration create_resources_table
 php artisan make:migration create_ranges_table
 php artisan make:migration create_regions_table
 php artisan make:migration create_year_table
+php artisan make:migration create_champions_table
 php artisan make:migration create_champion_position_table
 php artisan make:migration create_champion_specie_table
 php artisan make:migration create_champion_range_table
@@ -125,6 +125,8 @@ php artisan make:migration create_champion_region_table
 ```
 
 **Question :** Pourquoi créons-nous des tables séparées pour `champion_position`, `champion_region`, `champion_specie` et `champion_range` ?
+
+Parce-que le champion peur vneir de plusieurs régions, avoir plusieurs positions, plusieurs specie et plusieurs range
 
 ### 2. Définition des structures des tables
 
@@ -144,6 +146,7 @@ public function up()
         $table->string('name', 50);
         $table->foreignId('gender_id')->constrained();
         $table->foreignId('resource_id')->constrained();
+        $table->foreignId('year_id')->constrained();
         $table->timestamps();
     });
 }
@@ -177,9 +180,10 @@ php artisan make:model Champion
 php artisan make:model Gender
 php artisan make:model Position
 php artisan make:model Specie
-php artisan make:model Resource
 php artisan make:model Range
 php artisan make:model Region
+php artisan make:model Resource
+php artisan make:model Year
 ```
 
 ### 4. Définition des relations dans les modèles
@@ -226,12 +230,18 @@ class Champion extends Model
     {
         return $this->belongsToMany(Region::class);
     }
+
+    public function year()
+    {
+        return $this->belongTo(Year::class);
+    }
 }
 ```
 
 **Tâche :** Définissez les relations pour les autres modèles de manière similaire.
 
 **Question :** Pourquoi utilisons-nous `belongsToMany` pour certaines relations et `belongsTo` pour d'autres ?
+Car il y a certaines relations qui utilisent (n,n) et d'autrss (1,n)
 
 ### 5. Exécution des migrations
 
@@ -242,7 +252,11 @@ php artisan migrate
 ```
 
 **Question :** Que se passe-t-il si vous exécutez cette commande plusieurs fois ?
+Il ne se passe rien la deuxieme fois
+
 
 **Question finale :** Comment pourriez-vous vérifier que votre structure de base de données a été correctement mise en place ?
+
+
 
 Après avoir répondu à ces questions, vous pouvez passer au [TP SQL](./TP_SQL.md)
