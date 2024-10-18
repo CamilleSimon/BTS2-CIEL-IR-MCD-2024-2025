@@ -7,3 +7,7 @@
 4) Avec une clé primaire
 
 5) Pour le type un VARCHAR, habitat VARCHAR, couleur VARCHAR, stade d'évolution INT et taille et poids FLOAT
+
+6)Oui un pokémon peut avoir plusieurs coulerus et plusieurs satde d'évolution
+La couleur et le stade d'évolution peuvent être partagé par plusieurs pokémon
+
