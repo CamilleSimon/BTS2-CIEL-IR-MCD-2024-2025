@@ -21,3 +21,18 @@ Plusieurs champions peuvent avoir la meme ressource
 Une ressource peut appartenir a plusieurs champions  
 
 Nous creons des tables séparées pour champion_position, champion_region, champion_specie et champion_range pour avoir des tables pivots
+
+TP_SQL
+
+1)CREATE TABLE champion (
+	champion_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name VARCHAR(50) NOT NULL,
+	title VARCHAR(50),
+	lore TEXT,
+	gender_id INTEGER,
+	resource_id INTEGER,
+	year_id INTEGER,
+	FOREIGN KEY (gender_id) REFERENCES genders(gender_id),
+	FOREIGN KEY (resource_id) REFERENCES resources(resource_id),
+	FOREIGN KEY (year_id) REFERENCES years(year_id)
+);
