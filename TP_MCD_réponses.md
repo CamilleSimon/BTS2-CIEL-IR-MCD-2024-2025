@@ -52,3 +52,9 @@ VALUES (/*valeurs à ajouter à mettre dans l'ordre pour bien qu'ils soient ajou
     0,
     5
 );
+
+4)SELECT * FROM champions /* selectionne tous (*) dans la table champion*/
+ORDER BY name ASC;/*range les names par ordre alphabetique ASC tri croissant*/
+
+5)SELECT name FROM champions /*choisi les names dans la table champions*/
+WHERE name LIKE '%ar%'; /* choisi les names ou il y a ar les "%" veut dire tout autre caractere et vu qu'il y a avant "ar" et apres sa permet de selectionne les names ou il presente "ar" peu importe ou il se trouve*/
