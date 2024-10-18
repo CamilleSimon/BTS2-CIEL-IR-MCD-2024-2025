@@ -72,11 +72,11 @@ Dans cette requete je delete le champion Fiddlesticks (id de 11) dans la table c
 **Ne marche pas**
 ```SQL
 SELECT champions.name, positions.name FROM champions,positions,champion_position WHERE champions.champion_id=champion_position.champion_id AND champion_position.position_id = positions.position_id
+-- SELECT champions.name, GROUP_CONCAT(positions.name) FROM champions,positions INNER JOIN champion_position ON champions.champion_id = champion_position.champion_id AND champion_position.position_id=positions.position_id -- WHERE positions.position_id = champion_position.position_id AND champion_position.position_id = positions.position_id
 ```
 Dans cette requete je selectionne le nom du champion ainsi que le nom de sa position dans la table champions, positions et champion_position où le champion_id de 
 la table champions est égal au champion_id de la table champion_position (table pivot) et la position_id de la table champion_position (table pivot) est égal à la position_id de la table positions.
 A la fin j'obtient chaque champion ainsi que sa position, si un champion a plusieurs positions il apparaitra plusieurs fois mais avec sa premiere ou deuxieme position.
-
 **Ne marche pas**
 
 ### 9. Groupement par ressource
