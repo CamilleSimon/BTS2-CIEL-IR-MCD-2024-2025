@@ -39,3 +39,16 @@ TP_SQL
 
 2)ALTER TABLE champions /*permet d'apporter des modifications a la table champions ne se termine pas par une virgule pour pouvoir executer la commande suivante*/
 ADD popularity INT; /*ajout de la colonne popularity dans la table champions*/
+
+3)INSERT INTO champions (name, title, lore, gender_id, resource_id, year_id, created_at, updated_at, popularity) /*commande qui permet d'inserer dans la table champions des valeurs*/
+VALUES (/*valeurs à ajouter à mettre dans l'ordre pour bien qu'ils soient ajouter*/
+    'Fiddlesticks',
+    'The Ancient Fear',
+    'Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.',
+    'Autre',
+    'Mana',
+    10,
+    2009,
+    0,
+    5
+);
