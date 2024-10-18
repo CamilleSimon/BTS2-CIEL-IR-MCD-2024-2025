@@ -1,0 +1,99 @@
+/*  Exercice 1  */
+
+CREATE TABLE "champion" (
+	"champion_id" INTEGER PRIMARY KEY AUTOINCREMENT,
+	"name" VARCHAR NOT NULL,
+	"title" VARCHAR NULL,
+	"lore" TEXT NULL,
+	"gender_id" INTEGER NULL,
+	"resource_id" INTEGER NULL,
+	"year_id" INTEGER NULL,
+	CONSTRAINT "0" FOREIGN KEY ("year_id") REFERENCES "years" ("year_id") ON UPDATE NO ACTION ON DELETE SET NULL,
+	CONSTRAINT "1" FOREIGN KEY ("resource_id") REFERENCES "resources" ("resource_id") ON UPDATE NO ACTION ON DELETE SET NULL,
+	CONSTRAINT "2" FOREIGN KEY ("gender_id") REFERENCES "genders" ("gender_id") ON UPDATE NO ACTION ON DELETE SET NULL
+)
+;
+CREATE UNIQUE INDEX "champion_name_unique" ON "champion" ("name");
+
+	
+
+/* Exercice 2  */
+
+ALTER TABLE champions
+ADD popularity INTEGER 
+
+/* Exercice 3  */
+
+INSERT INTO champions (name, title, lore,gender_id,resource_id, year_id, popularity) VALUES ('Fiddlesticks', 'The Ancient Fear', 'Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.',3,1,1,5);
+
+INSERT INTO champion_specie (champion_id, specie_id) VALUES (11,9);
+INSERT INTO champion_region (champion_id, region_id) VALUES (11,14);
+INSERT INTO champion_range (champion_id, range_id) VALUES (11,2);
+INSERT INTO champion_position (champion_id, position_id) VALUES (11,2);
+
+	
+/* Exercice 4  */
+
+SELECT * FROM champions ORDER BY name;*/
+
+/* Exercice 5  */
+
+SELECT name FROM champions WHERE name LIKE '%ar%';
+
+/* Exercice 6 	 */
+Je met à popularity un nombre random de 1 à 10 en utilisant ABS(RANDOM()) % 10 + 1 
+
+UPDATE champions
+SET popularity = (ABS(RANDOM()) % 10) + 1;
+
+
+/* Exercice 7  */
+
+DELETE FROM champions WHERE id = 1;
+
+/* Exercice 8  */
+
+SELECT c.name AS champion, GROUP_CONCAT(p.name) AS positions
+FROM champions c
+JOIN champion_position cp ON c.champion_id = cp.champion_id
+JOIN positions p ON cp.position_id = p.position_id
+GROUP BY c.name;	
+
+/* Exercice 9  */
+
+SELECT r.name AS Resource, COUNT(c.champion_id) AS NbrChampion
+FROM champions c
+JOIN resources r ON c.resource_id = r.resource_id
+GROUP BY r.name;
+
+
+/* Exercice 10  */
+
+SELECT champions.name AS Champ, GROUP_CONCAT(regions.name) AS Region
+FROM champions
+JOIN champion_region cr ON champions.champion_id = cr.champion_id
+JOIN regions ON cr.region_id = regions.region_id
+WHERE regions.name = 'Noxus'; 
+
+
+/* Exercice 11   */
+
+SELECT champions.name AS Champ, COUNT(cr.region_id) AS NbrRegion , GROUP_CONCAT(regions.name) AS Region
+FROM champions
+JOIN regions  ON cr.region_id = regions.region_id 
+JOIN champion_region cr ON champions.champion_id = cr.champion_id
+GROUP BY champions.champion_id, champions.name
+HAVING COUNT(cr.region_id) > 1; 
+
+
+
+
+/* Exercice 12  */
+SELECT champions.name AS Champ , COUNT(cp.position_id) AS NbrPosition, GROUP_CONCAT(positions.name) AS NomPosition
+FROM champions 
+JOIN champion_position cp ON champions.champion_id = cp.champion_id
+JOIN positions ON cr.position_id = positions.position_id
+GROUP BY champions.champion_id, champions.name
+HAVING COUNT(cp.position_id) = 2;
+
+
