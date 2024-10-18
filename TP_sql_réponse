@@ -1,0 +1,31 @@
+Q1
+CREATE TABLE "champion" (
+	"champion_id" INTEGER NOT NULL,
+	"name" VARCHAR NOT NULL,
+	"title" VARCHAR NULL,
+	"lore" TEXT NULL,
+	"gender_id" INTEGER NULL,
+	"resource_id" INTEGER NULL,
+	"year_id" INTEGER NULL,
+	"created_at" DATETIME NULL,
+	"updated_at" DATETIME NULL,
+	PRIMARY KEY ("champion_id"),
+	CONSTRAINT "0" FOREIGN KEY ("year_id") REFERENCES "years" ("year_id") ON UPDATE NO ACTION ON DELETE SET NULL,
+	CONSTRAINT "1" FOREIGN KEY ("resource_id") REFERENCES "resources" ("resource_id") ON UPDATE NO ACTION ON DELETE SET NULL,
+	CONSTRAINT "2" FOREIGN KEY ("gender_id") REFERENCES "genders" ("gender_id") ON UPDATE NO ACTION ON DELETE SET NULL
+);
+j'ai recopié la requète deja existante pour créer la table Champion
+Q2
+ALTER TABLE champions
+ADD popularity INT;
+Q3
+INSERT INTO champions 
+VALUES ('Fiddlesticks','The Ancient Fear','Something has awoken in Runeterra. Something ancient. Something terrible. 
+The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. 
+Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of 
+the crow, or the whispering of the shape that appears almost human... Fiddlesticks has returned.','autre','démon','mana','a distance','jungle','runeterra','2009','5');
+
+j'ai inséré le champion fiddlesticks dans la base champions
+Q4
+SELECT name FROM champions
+ORDER BY name ASC
